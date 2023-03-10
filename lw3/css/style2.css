@@ -1,0 +1,121 @@
+/* * selector */
+body{
+  height: 2600px;
+  width: 1440px;
+  padding: 0%;
+  margin: 0%;
+}
+a{
+  text-decoration: none;
+}
+.brand_name{
+  font-family: 'Lora', serif;
+  font-size: 26px;
+  line-height: 26px;
+  color: #2E2E2E;
+  padding-left: 100px;
+  padding-top: 10px;
+}
+.fotter__brand_name{
+  font-family: 'Lora', serif;
+  font-size: 26px;
+  line-height: 26px;
+  color: #FFFFFF;
+  padding-left: 100px;
+  padding-top: 10px;
+}
+.navigation_buttons{
+  text-align: right;
+  font-family: 'Oxygen', sans-serif;
+  font-size: 12px;
+  line-height: 20px;
+  letter-spacing: 0.6px;
+  color: #2E2E2E;
+  padding-left: 150px;
+}
+.fotter-navigation_buttons{
+  text-align: right;
+  font-family: 'Oxygen', sans-serif;
+  font-size: 12px;
+  line-height: 20px;
+  color: #FFFFFF;
+  padding-left: 150px;
+  letter-spacing: 1px;
+  opacity: 0.60;
+}
+header{
+  width: 1440px;
+
+}
+.navigation_buttons>a
+{
+  color: #2E2E2E;
+  text-align: right;
+  padding-right: 40px;
+}
+.fotter-navigation_buttons>a
+{
+  text-decoration: none;
+  color: #FFFFFF;
+  text-align: right;
+  padding-right: 40px;
+}
+.title{
+  /* position: absolute; */
+  height: 159px;
+  left: 17.36%;
+  right: 17.36%;
+  top: 163px;
+}
+.title>.title__name{
+  font-family: 'Lora';
+  font-style: normal;
+  font-size: 50px;
+  font-weight: 400;
+  line-height: 51px;
+  letter-spacing: 2px;
+  text-align: center;
+  height: 20px;
+  top: -7px;
+  color :#2E2E2E;
+}
+.title>.title__discription{
+  height: 20px;
+  top: 64px;
+  font-family: 'Oxygen';
+  font-weight: 400;
+  line-height: 20px;
+  letter-spacing: 0em;
+  text-align: center;
+  color: #2E2E2EA1; 
+  font-size: 19px;
+}
+.post{
+  /* position: absolute; */
+  height: 1706px;
+  background: #F7F7F7;
+}
+.post__image{ 
+  height: 534px;
+  border-radius: 3px;
+  top: 20%;
+}
+.post>.post__text{
+  position: absolute; 
+  width: 960px;
+  height: 1431px;
+  left: 240px;
+  top: 1000px;
+  font-family: 'Oxygen';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 35px;
+  color: #101315;
+}
+footer
+{
+    background: url("../pics/footer.png");
+    height: 80px;
+    width: 1440px;
+}

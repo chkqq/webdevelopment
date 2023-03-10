@@ -1,0 +1,222 @@
+* {
+    margin: 0;
+    padding: 0;
+  }
+body{
+    width: 1440px;
+    height: 1909px;
+}
+a{
+    text-decoration: none;
+}
+.navigation_buttons {
+    text-align: right;
+    font-family: 'Oxygen', sans-serif;
+    font-size: 12px;
+    line-height: 20px;
+    letter-spacing: 0.6px;
+    color: #FFFFFF;
+    padding-right: 150px;
+
+}
+/* Поменять форматирование */
+footer > .navigation_buttons {
+    font-size: 11px;
+    line-height: 20px;
+    letter-spacing: 1px;
+    opacity: 0.60;
+}
+.navigation_buttons>a
+{
+    text-decoration: none;
+    color: #FFFFFF;
+    text-align: right;
+    padding-right: 40px;
+}
+.brand_name{
+    font-family: 'Lora', serif;
+    font-size: 26px;
+    line-height: 26px;
+    color: #FFFFFF;
+    padding-left: 100px;
+    padding-top: 10px;
+    /* padding: 10px 0 0 100px;
+    padding: 10px 100px;
+    padding: 10px 15px 100px; */
+    /* сократить стили */
+    font: 26px/1 'Lora', serif;
+}
+header{
+    background: url("../pics/hills.png");
+    width: 1440px;
+    height: 500px;
+}
+.title{
+    text-align: center;
+}
+.title__text{
+    font-family: 'Oxygen', sans-serif;
+    color: #FFFFFF;
+    font-size: 19px;
+    line-height: 20px;
+    opacity: 0.63;
+}
+.title__name{
+    /* зачем сериф */
+    font-family: 'Lora', serif;
+    font-size: 50px;
+    color: #FFFFFF;
+    line-height: 51px;
+    letter-spacing: 2px;
+    margin: 12px;
+}
+.articles_type{
+    text-align: center;
+    height: 65px;
+    background-color: #FFFFFF;
+    padding-top: 10px;
+}
+.articles_type>a{
+    text-align: center;
+    font-family: 'Lora', serif;
+    font-size: 14px;
+    line-height: 20px;
+    color: #768088;
+    /* padding: 40px; */
+    margin: 20px;
+    padding: 3px;
+}
+.articles_type>a:hover{
+    background-color: rgb(233, 233, 233);
+    transition: 350ms;
+}
+.button{
+    width: 167px;
+    height: 44px;
+    background-color: #DD783F;
+    border: none;
+    border-radius: 3px;
+    font-family: 'Oxygen', sans-serif;
+    color: #FFFFFF;
+    font-size: 13px;
+    line-height: 20px;
+    margin: 40px;
+}
+.button:hover{
+    cursor: pointer;
+    width: 200px;
+    background-color: #f37e3b;
+}
+
+
+
+section
+{
+    background-color: #F6F6F6;
+    padding: 10px;
+}
+
+
+
+
+
+.block-name-featured, 
+.block-name-recent {
+    text-align: center;
+    font-family: 'Oxygen', sans-serif;
+    color: #2E2E2E;
+    font-size: 20px;
+    letter-spacing: 2px;
+    line-height: 27px;
+}
+
+/* posts */
+.first-post
+{
+   background: url("..//pics/NorthLights.png"); 
+}
+.second-post
+{
+     background: url("..//pics/child.png"); 
+}
+.first-post, .second-post
+{
+    border-radius: 3px;
+}
+.post
+{
+    width: 460px;
+    height: 280px;
+}
+.post>*
+{
+    color: #FFFFFF;
+}
+
+.post__title
+{
+    font-family: 'Lora', serif;
+    font-size: 27px;
+    line-height: 30px;
+    color: #FFFFFF;
+}
+
+.post__short-description
+{
+    font-family: 'Oxygen', sans-serif;
+    font-size: 14px;
+    line-height: 25px;
+    opacity: 0.7;
+}
+
+.post__author-name, .post__publication-date
+{
+    font-family: 'Oxygen', sans-serif;
+    font-size: 12px;
+    line-height: 35px;
+    opacity: 0.7;
+}
+.post__author-userpic
+{
+    border-radius: 60px;
+    width: 26px;
+}
+
+/* recent posts */
+.recent-posts .post
+{
+    background-color: #FFFFFF;
+    width: 296px;
+    height: 291px;
+}
+
+.recent-posts .post__author__name, .recent-posts .post__publication-date
+{
+    color: #999999;
+}
+.recent-posts .post__title
+{
+    font-family: 'Lora', serif;
+    font-size: 16px;
+    line-height: 21px;
+    color: #101315;
+}
+.post__image
+{
+    width: 296px;
+    height: 150px;
+}
+.recent-posts .post__short-description
+{
+    font-family: 'Oxygen', sans-serif;
+    font-size: 13px;
+    line-height: 19px;
+    color: #7A7A7A;
+}
+footer
+{
+    background: url("../pics/footer.png");
+    height: 80px;
+    width: 110vw;
+}
+
