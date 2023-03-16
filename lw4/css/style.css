@@ -2,18 +2,18 @@
     margin: 0;
     padding: 0;
   }
-body{
+
+body {
     width: 1440px;
     height: 1909px;
 }
-a{
+
+a {
     text-decoration: none;
 }
-.navigation_buttons{
+.site-manage__navigation {
     text-align: right;
-    font-family: 'Oxygen', sans-serif;
-    font-size: 12px;
-    line-height: 20px;
+    font: bold normal 12px/20px 'Oxygen', sans-serif;
     letter-spacing: 0.6px;
     color: #FFFFFF;
     padding-right: 150px;
@@ -21,13 +21,20 @@ a{
     width: 400px;
     justify-content: space-between;
 }
-footer>.navigation_buttons{
-    font-size: 11px;
-    line-height: 20px;
+
+.last-bar__navigation {
+    text-align: right;
+    font: bold normal 12px/20px 'Oxygen', sans-serif;
+    color: #FFFFFF;
+    padding-right: 150px;
+    display: flex;
+    width: 400px;
+    justify-content: space-between; 
     letter-spacing: 1px;
     opacity: 0.60;    
 }
-footer>.lastbar{
+
+.lastbar {
     position: absolute;
     height: 89px;
     width: 1440px;
@@ -38,163 +45,156 @@ footer>.lastbar{
     justify-content: space-between;
 
 }
-.site-manage{
+
+.site-manage {
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
-.navigation_buttons>a
-{
+.navigation__link {
     text-decoration: none;
     color: #FFFFFF;
     text-align: right;
     padding-right: 40px;
     padding-top: 22px;
+    text-transform: uppercase;
 
 }
-.brand_name{
-    font-family: 'Lora', serif;
-    font-size: 26px;
-    line-height: 26px;
+
+.site-manage__brand-name {
+    font: bold normal 26px/26px 'Lora', serif;
     color: #FFFFFF;
     padding-left: 100px;
     padding-top: 10px;
 }
-header{
+
+.last-bar__brand-name {
+    font: bold normal 26px/26px 'Lora', serif;
+    padding-left: 100px;
+    padding-top: 10px;
+    color: #FFFFFF;
+}
+
+header {
     background: url("../pics/hills.png");
     width: 1440px;
     height: 500px;
 }
-.title{
+
+.title {
     text-align: center;
 }
-.title>.title__text{
-    font-family: 'Oxygen', sans-serif;
+
+.title__text {
+    font: bold normal 19px/20px 'Oxygen', sans-serif;
     color: #FFFFFF;
     font-size: 19px;
     line-height: 20px;
     opacity: 0.63;
 }
-.title>.title__name{
-    font-family: 'Lora', serif;
-    font-size: 50px;
+
+.title__name {
+    font: bold normal 50px/51px 'Lora', serif;
     color: #FFFFFF;
-    line-height: 51px;
     letter-spacing: 2px;
     margin: 12px;
 }
-.articles_type{
+
+.articles-type {
     text-align: center;
     height: 65px;
     background-color: #FFFFFF;
     padding-top: 10px;
 }
-.articles_type>a{
+
+.articles-type__link {
     text-align: center;
-    font-family: 'Lora', serif;
-    font-size: 14px;
-    line-height: 20px;
+    font-family: bold normal 14px/20px 'Lora', serif;
     color: #768088;
     /* padding: 40px; */
     margin: 20px;
     padding: 3px;
 }
-.articles_type>a:hover{
-    background-color: rgb(233, 233, 233);
+
+.articles-type__link:hover {
+    background-color: #FFFFFF;
     transition: 350ms;
 }
-.button{
+
+.site-transit {
     width: 167px;
     height: 44px;
     background-color: #DD783F;
     border: none;
     border-radius: 3px;
-    font-family: 'Oxygen', sans-serif;
+    font: normal bold 13px/20px 'Oxygen', sans-serif;
     color: #FFFFFF;
-    font-size: 13px;
-    line-height: 20px;
     margin: 40px;
 }
-.button:hover{
+
+.site-transit:hover {
     cursor: pointer;
     width: 200px;
-    background-color: #f37e3b;
+    background-color: #F37E3B;
 }
 
-
-
-section
-{
+section {
     background-color: #F6F6F6;
     padding: 20px;
 }
 
-
-
-
-
-.block-name-featured, .block-name-recent{
+.fetured-posts__name, .recents__name {
     text-align: center;
-    font-family: 'Oxygen', sans-serif;
+    font: normal bold 20px/27px 'Oxygen', sans-serif;
     color: #2E2E2E;
-    font-size: 20px;
     letter-spacing: 2px;
-    line-height: 27px;
 }
 
 /* posts */
-.first-post
-{
+.first-post {
    background: url("..//pics/NorthLights.png"); 
 }
-.second-post
-{
+
+.second-post {
      background: url("..//pics/child.png"); 
 }
-.first-post, .second-post
-{
+.first-post, .second-post {
     border-radius: 3px;
 }
-.post
-{
+
+.post {
     width: 460px;
     height: 280px;
+    color: #FFFFFF;
 }
-.post__post-line{
+
+.post__post-line {
     display: flex;
     justify-content: center;
     justify-content: space-evenly;
 }
-.post>*
-{
+
+.post>* {
     color: #FFFFFF;
 }
 
-.post__title
-{
-    font-family: 'Lora', serif;
-    font-size: 27px;
-    line-height: 30px;
+.post__title {
+    font: normal bold 27px/30px 'Lora', serif;
     color: #FFFFFF;
 }
 
-.post__short-description
-{
-    font-family: 'Oxygen', sans-serif;
-    font-size: 14px;
-    line-height: 25px;
+.post__short-description {
+    font: normal bold 14px/25px 'Oxygen', sans-serif;
     opacity: 0.7;
 }
 
-.post__author__name, .post__publication-date
-{
-    font-family: 'Oxygen', sans-serif;
-    font-size: 12px;
-    line-height: 35px;
+.post__author-name, .post__publication-date {
+    font: normal bold 12px/35px 'Oxygen', sans-serif;
     opacity: 0.7;
 }
-.post__author__userpic
+
+.post__author-userpic
 {
     border-radius: 60px;
     width: 26px;
@@ -208,15 +208,13 @@ section
     height: 291px;
 }
 
-.recent-posts .post__author__name, .recent-posts .post__publication-date
+.recent-posts .post__author-name, .recent-posts .post__publication-date
 {
     color: #999999;
 }
 .recent-posts .post__title
 {
-    font-family: 'Lora', serif;
-    font-size: 16px;
-    line-height: 21px;
+    font: normal bold 16px/21px 'Lora', serif;
     color: #101315;
 }
 .post__image
@@ -226,9 +224,7 @@ section
 }
 .recent-posts .post__short-description
 {
-    font-family: 'Oxygen', sans-serif;
-    font-size: 13px;
-    line-height: 19px;
+    font: normal bold 13px/19px 'Oxygen', sans-serif;
     color: #7A7A7A;
 }
 .site-footer
