@@ -13,7 +13,7 @@ a {
 }
 .site-manage__navigation {
     text-align: right;
-    font: bold normal 12px/20px 'Oxygen', sans-serif;
+    font: normal 12px/20px 'Oxygen', sans-serif;
     letter-spacing: 0.6px;
     color: #FFFFFF;
     padding-right: 150px;
@@ -24,7 +24,7 @@ a {
 
 .last-bar__navigation {
     text-align: right;
-    font: bold normal 12px/20px 'Oxygen', sans-serif;
+    font: normal 12px/20px 'Oxygen', sans-serif;
     color: #FFFFFF;
     padding-right: 150px;
     display: flex;
@@ -34,13 +34,12 @@ a {
     opacity: 0.60;    
 }
 
-.lastbar {
-    position: absolute;
+.last-bar {
     height: 89px;
     width: 1440px;
     background: #232F3899;
     opacity: 0.60;
-    bottom: -146.2%;
+    margin-top: 90px;
     display: flex;
     justify-content: space-between;
 
@@ -63,14 +62,14 @@ a {
 }
 
 .site-manage__brand-name {
-    font: bold normal 26px/26px 'Lora', serif;
+    font: normal 26px/26px 'Lora', serif;
     color: #FFFFFF;
     padding-left: 100px;
     padding-top: 10px;
 }
 
 .last-bar__brand-name {
-    font: bold normal 26px/26px 'Lora', serif;
+    font: normal 26px/26px 'Lora', serif;
     padding-left: 100px;
     padding-top: 10px;
     color: #FFFFFF;
@@ -87,7 +86,7 @@ header {
 }
 
 .title__text {
-    font: bold normal 19px/20px 'Oxygen', sans-serif;
+    font: normal 19px/20px 'Oxygen', sans-serif;
     color: #FFFFFF;
     font-size: 19px;
     line-height: 20px;
@@ -95,7 +94,7 @@ header {
 }
 
 .title__name {
-    font: bold normal 50px/51px 'Lora', serif;
+    font: normal 50px/51px 'Lora', serif;
     color: #FFFFFF;
     letter-spacing: 2px;
     margin: 12px;
@@ -103,14 +102,14 @@ header {
 
 .articles-type {
     text-align: center;
-    height: 65px;
+    height: 30px;
     background-color: #FFFFFF;
     padding-top: 10px;
 }
 
 .articles-type__link {
     text-align: center;
-    font-family: bold normal 14px/20px 'Lora', serif;
+    font: normal 14px/20px 'Lora', serif;
     color: #768088;
     /* padding: 40px; */
     margin: 20px;
@@ -128,7 +127,7 @@ header {
     background-color: #DD783F;
     border: none;
     border-radius: 3px;
-    font: normal bold 13px/20px 'Oxygen', sans-serif;
+    font: normal 13px/20px 'Oxygen', sans-serif;
     color: #FFFFFF;
     margin: 40px;
 }
@@ -141,25 +140,25 @@ header {
 
 section {
     background-color: #F6F6F6;
-    padding: 20px;
+    
 }
 
 .fetured-posts__name, .recents__name {
     text-align: center;
-    font: normal bold 20px/27px 'Oxygen', sans-serif;
+    font: normal 20px/27px 'Oxygen', sans-serif;
     color: #2E2E2E;
     letter-spacing: 2px;
 }
 
 /* posts */
-.first-post {
+.post__first-post {
    background: url("..//pics/NorthLights.png"); 
 }
 
-.second-post {
+.post__second-post {
      background: url("..//pics/child.png"); 
 }
-.first-post, .second-post {
+.post__first-post, .post__second-post {
     border-radius: 3px;
 }
 
@@ -173,6 +172,8 @@ section {
     display: flex;
     justify-content: center;
     justify-content: space-evenly;
+    width: 936px;
+    padding-left: 17%;
 }
 
 .post>* {
@@ -180,18 +181,90 @@ section {
 }
 
 .post__title {
-    font: normal bold 27px/30px 'Lora', serif;
+    font: normal 27px/30px 'Lora', serif;
     color: #FFFFFF;
+    padding-left: 3%;
+}
+.post__string {
+    background: #EFEFEF;
+    height: 1px;
+    border: none;
+    margin-top: 20px;
+
+}
+.post__author-featured {
+    padding-top: 100%;
+}
+.post__author {
+    padding-top: 5%;
+    padding-left: 3%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: -10px;
+}
+.post__author-name-userpic {
+    display: flex;
+    align-items: center;
 }
 
 .post__short-description {
-    font: normal bold 14px/25px 'Oxygen', sans-serif;
+    font: normal 14px/25px 'Oxygen', sans-serif;
     opacity: 0.7;
+    padding-left: 3%;
+    margin-top: 15px;
 }
 
-.post__author-name, .post__publication-date {
-    font: normal bold 12px/35px 'Oxygen', sans-serif;
+.post__author-name {
+    font: normal 12px/35px 'Oxygen', sans-serif;
     opacity: 0.7;
+    padding-left: 10px;
+}
+
+.post__publication-date {
+    font: normal 12px/35px 'Oxygen', sans-serif;
+    opacity: 0.7;
+    padding-right: 3%;
+}
+
+.recent {
+    padding-bottom: 108px;
+    padding-top: 25px;
+}
+
+.fetured {
+    padding-top: 62px;
+    padding-bottom: 50px;
+}
+
+.featured__string {
+    width: 188px;
+    height: 1px;
+    background: #DEDEDE;
+    border: none;
+    margin-top: 15px;
+}
+
+.recent__string {
+    width: 188px;
+    height: 1px;
+    background: #DEDEDE;
+    border: none;
+    margin-top: 15px;
+}
+
+.featured-posts__title {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding-bottom: 50px;
+}
+
+.recent__title {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding-bottom: 50px;
 }
 
 .post__author-userpic
@@ -214,7 +287,7 @@ section {
 }
 .recent-posts .post__title
 {
-    font: normal bold 16px/21px 'Lora', serif;
+    font: normal 16px/21px 'Lora', serif;
     color: #101315;
 }
 .post__image
@@ -224,7 +297,7 @@ section {
 }
 .recent-posts .post__short-description
 {
-    font: normal bold 13px/19px 'Oxygen', sans-serif;
+    font: normal 13px/19px 'Oxygen', sans-serif;
     color: #7A7A7A;
 }
 .site-footer
@@ -239,7 +312,7 @@ section {
     padding-top: 150px;
     padding-right: 150px;
 }
-.input-mail>.input-mail__txt{
+.input-mail__txt{
     border: none;
     height: 50px;
     width: 375px;
@@ -251,7 +324,7 @@ section {
     border-bottom-left-radius: 3px;
 
 }
-.input-mail>.input-mail__btn{
+.input-mail__btn{
     border: none;
     height: 50px;
     width: 125px;
@@ -270,7 +343,7 @@ section {
     padding-left: 625px;
     padding-top: 85px;
 }
-.connection>.connection__text{
+.connection__text{
     font-family: Oxygen;
     font-size: 25px;
     font-weight: 400;
@@ -278,7 +351,7 @@ section {
     text-align: center;
     color: #EFEFEF;
 }
-.connection>.connection__decor{
+.connection__decor{
     height: 1px;
     width: 188px;
     background: #DEDEDE;

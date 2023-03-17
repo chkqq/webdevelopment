@@ -1,122 +1,191 @@
-
-body{
+* {
+  margin: 0;
+  padding: 0;
+}
+body {
   height: 2600px;
   width: 1440px;
 }
-a{
+
+a {
   text-decoration: none;
 }
-.brand_name{
-  font-family: 'Lora', serif;
-  font-size: 26px;
-  line-height: 26px;
+
+.site-manage__brand-name {
+  font: normal 26px/26px 'Lora', serif;
   color: #2E2E2E;
   padding-left: 100px;
   padding-top: 10px;
 }
-.fotter__brand_name{
-  font-family: 'Lora', serif;
-  font-size: 26px;
-  line-height: 26px;
+ 
+.last-bar__brand-name {
+  font: normal 26px/26px'Lora', serif;
   color: #FFFFFF;
   padding-left: 100px;
   padding-top: 10px;
 }
-.navigation_buttons{
+
+.site-manage__navigation {
   text-align: right;
-  font-family: 'Oxygen', sans-serif;
-  font-size: 12px;
-  line-height: 20px;
+  font: normal 12px/20px 'Oxygen', sans-serif;
   letter-spacing: 0.6px;
   color: #2E2E2E;
   padding-left: 150px;
 }
-.fotter-navigation_buttons{
+
+.last-bar__navigation {
   text-align: right;
-  font-family: 'Oxygen', sans-serif;
-  font-size: 12px;
-  line-height: 20px;
+  font: normal 12px/20px 'Oxygen', sans-serif;
   color: #FFFFFF;
   padding-left: 150px;
   letter-spacing: 1px;
-  opacity: 0.60;
 }
-header{
+
+header {
   width: 1440px;
 
 }
-.navigation_buttons>a
-{
+
+.navigation__link {
   color: #2E2E2E;
   text-align: right;
   padding-right: 40px;
-  padding-bottom: 50%;
 }
-.fotter-navigation_buttons>a
-{
-  text-decoration: none;
+
+.last-bar__navigation > .navigation__link {
   color: #FFFFFF;
-  text-align: right;
-  padding-right: 40px;
-  padding-bottom: 50%;
 }
-.title{
+
+.title {
   /* position: absolute; */
   height: 159px;
   left: 17.36%;
   right: 17.36%;
   top: 163px;
 }
-.title>.title__name{
-  font-family: 'Lora';
-  font-style: normal;
-  font-size: 50px;
-  font-weight: 400;
-  line-height: 51px;
+
+.title__name {
+  font: 400 normal 50px/51px 'Lora';
   letter-spacing: 2px;
   text-align: center;
   height: 20px;
   top: -7px;
   color :#2E2E2E;
+  padding-top: 80px;
 }
-.title>.title__discription{
+
+.site-manage {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.last-bar {
+  height: 89px;
+  width: 1440px;
+  background: #232F3899;
+  opacity: 0.60;
+  margin-top: 90px;
+  display: flex;
+  justify-content: space-between;
+
+}
+
+
+.last-bar__brand-name {
+  font: normal 26px/26px 'Lora', serif;
+  padding-left: 100px;
+  padding-top: 10px;
+  color: #FFFFFF;
+}
+
+.title__discription {
   height: 20px;
   top: 64px;
-  font-family: 'Oxygen';
-  font-weight: 400;
-  line-height: 20px;
+  font: 400 normal 19px/20px 'Oxygen';
   letter-spacing: 0em;
   text-align: center;
   color: #2E2E2EA1; 
-  font-size: 19px;
+  padding-top: 55px;
 }
-.post{
+
+.post {
   /* position: absolute; */
   height: 1706px;
   background: #F7F7F7;
 }
-.post__image{ 
+
+.post__image { 
   height: 534px;
   border-radius: 3px;
   top: 20%;
+  padding-top: 10%;
 }
-.post>.post__text{
+
+.post__text {
   position: absolute; 
   width: 960px;
   height: 1431px;
   left: 240px;
   top: 1000px;
-  font-family: 'Oxygen';
-  font-style: normal;
-  font-weight: 400;
-  font-size: 24px;
-  line-height: 35px;
+  font: 400 normal 24px/35px 'Oxygen';
   color: #101315;
 }
-footer
-{
-    background: url("../pics/footer.png");
-    height: 80px;
+
+
+
+footer {
+    background: url("../pics/footer2.png");
+    height: 378px;
     width: 1440px;
 }
+.input-mail{
+  display: flex;
+  justify-content: center;
+  padding-top: 150px;
+  padding-right: 150px;
+}
+.input-mail__txt{
+  border: none;
+  height: 50px;
+  width: 375px;
+  background: #FFFFFF;
+  outline: none;
+  color: #817F83;
+  padding-left: 20px;
+  border-top-left-radius: 3px;
+  border-bottom-left-radius: 3px;
 
+}
+.input-mail__btn{
+  border: none;
+  height: 50px;
+  width: 125px;
+  left: 375px;
+  background: #FFFFFF47;
+  color: #F8F8F8;
+  border-top-right-radius: 3px;
+  border-bottom-right-radius: 3px;
+
+}
+.connection{
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-left: 625px;
+  padding-top: 85px;
+}
+.connection__text{
+  font-family: Oxygen;
+  font-size: 25px;
+  font-weight: 400;
+  line-height: 30px;
+  text-align: center;
+  color: #EFEFEF;
+}
+.connection__decor{
+  height: 1px;
+  width: 188px;
+  background: #DEDEDE;
+}
