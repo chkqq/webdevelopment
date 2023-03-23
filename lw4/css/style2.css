@@ -39,6 +39,7 @@ a {
   color: #FFFFFF;
   padding-left: 150px;
   letter-spacing: 1px;
+  margin-bottom: 40px;
 }
 
 header {
@@ -48,8 +49,11 @@ header {
 
 .navigation__link {
   color: #2E2E2E;
+  text-decoration: none;
   text-align: right;
   padding-right: 40px;
+  padding-top: 22px;
+  text-transform: uppercase;
 }
 
 .last-bar__navigation > .navigation__link {
@@ -78,6 +82,7 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  align-items: flex-end;
 }
 
 .last-bar {
@@ -88,6 +93,7 @@ header {
   margin-top: 90px;
   display: flex;
   justify-content: space-between;
+  align-items: flex-end;
 
 }
 
@@ -95,7 +101,7 @@ header {
 .last-bar__brand-name {
   font: normal 26px/26px 'Lora', serif;
   padding-left: 100px;
-  padding-top: 10px;
+  margin-bottom: 40px;
   color: #FFFFFF;
 }
 
@@ -111,7 +117,7 @@ header {
 
 .post {
   /* position: absolute; */
-  height: 1706px;
+  height: 1556px;
   background: #F7F7F7;
 }
 
@@ -143,7 +149,6 @@ footer {
   display: flex;
   justify-content: center;
   padding-top: 150px;
-  padding-right: 150px;
 }
 .input-mail__txt{
   border: none;
