@@ -122,7 +122,7 @@ header {
     transition: 350ms;
 }
 
-.site-transit {
+.title__site-transit {
     width: 167px;
     height: 44px;
     background-color: #DD783F;
@@ -133,7 +133,7 @@ header {
     margin: 40px;
 }
 
-.site-transit:hover {
+.title__site-transit:hover {
     cursor: pointer;
     width: 200px;
     background-color: #F37E3B;
@@ -204,6 +204,7 @@ section {
     justify-content: space-evenly;
     width: 936px;
     padding-left: 17%;
+    padding-bottom: 12px;
 }
 
 .post>* {
@@ -258,7 +259,7 @@ section {
 }
 
 .recent {
-    padding-bottom: 108px;
+    padding-bottom: 96px;
     padding-top: 25px;
 }
 

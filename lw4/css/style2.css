@@ -90,7 +90,7 @@ header {
   width: 1440px;
   background: #232F3899;
   opacity: 0.60;
-  margin-top: 90px;
+   margin-top: 90px; 
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
