@@ -39,9 +39,9 @@ a {
     width: 1440px;
     background: #232F3899;
     opacity: 0.60;
-    margin-top: 90px;
     display: flex;
     justify-content: space-between;
+    margin-top: 5px;
 
 }
 
@@ -49,6 +49,7 @@ a {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    padding: 0 150px 0 100px;
 }
 
 .navigation__link {
@@ -64,7 +65,7 @@ a {
 .site-manage__brand-name {
     font: normal 26px/26px 'Lora', serif;
     color: #FFFFFF;
-    padding-left: 100px;
+    /* padding-left: 100px; */
     padding-top: 10px;
 }
 
@@ -91,6 +92,11 @@ header {
     font-size: 19px;
     line-height: 20px;
     opacity: 0.63;
+}
+
+.article:last-child
+{
+    margin-right: 0;
 }
 
 .title__name {
@@ -124,13 +130,14 @@ header {
 
 .title__site-transit {
     width: 167px;
-    height: 44px;
     background-color: #DD783F;
     border: none;
     border-radius: 3px;
+    display: inline-block;
     font: normal 13px/20px 'Oxygen', sans-serif;
     color: #FFFFFF;
-    margin: 40px;
+    margin: 28px;
+    padding: 12px 0 12px 0;
 }
 
 .title__site-transit:hover {
@@ -203,7 +210,8 @@ section {
     justify-content: center;
     justify-content: space-evenly;
     width: 936px;
-    padding-left: 17%;
+    margin-left: auto;
+    margin-right: auto;
     padding-bottom: 12px;
 }
 
@@ -212,7 +220,7 @@ section {
 }
 
 .post__title {
-    font: normal 27px/30px 'Lora', serif;
+    font: normal 27px/30px 'Lora';
     color: #FFFFFF;
     padding-left: 3%;
 }
@@ -298,50 +306,49 @@ section {
     padding-bottom: 50px;
 }
 
-.post__author-userpic
-{
+.post__author-userpic {
     border-radius: 60px;
     width: 26px;
 }
 
 /* recent posts */
-.recent-posts .post
-{
+.recent-posts .post {
     background-color: #FFFFFF;
     width: 296px;
     height: 291px;
 }
 
-.recent-posts .post__author-name, .recent-posts .post__publication-date
-{
+.recent-posts .post__author-name, .recent-posts .post__publication-date {
     color: #999999;
 }
-.recent-posts .post__title
-{
+
+.recent-posts .post__title {
     font: normal 16px/21px 'Lora', serif;
     color: #101315;
 }
-.post__image
-{
+
+.post__image {
     width: 296px;
     height: 150px;
 }
-.recent-posts .post__short-description
-{
+
+.recent-posts .post__short-description {
     font: normal 13px/19px 'Oxygen', sans-serif;
     color: #7A7A7A;
 }
-.site-footer
-{
+
+.site-footer {
     background: url("../pics/footer2.png");
     height: 378px;
 }
+
 .input-mail{
     display: flex;
     justify-content: center;
-    padding-top: 150px;
+    margin: 39px 0 69px 0;
 }
-.input-mail__txt{
+
+.input-mail__txt {
     border: none;
     height: 50px;
     width: 375px;
@@ -353,7 +360,8 @@ section {
     border-bottom-left-radius: 3px;
 
 }
-.input-mail__btn{
+
+.input-mail__btn {
     border: none;
     height: 50px;
     width: 125px;
@@ -364,25 +372,20 @@ section {
     border-bottom-right-radius: 3px;
 
 }
-.connection{
-    position: absolute;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    padding-left: 625px;
-    padding-top: 85px;
-}
-.connection__text{
-    font-family: Oxygen;
-    font-size: 25px;
-    font-weight: 400;
-    line-height: 30px;
+
+
+.connection__text {
+    font: 400 25px/30px Oxygen;
     text-align: center;
     color: #EFEFEF;
+    padding-top: 90px;
 }
-.connection__decor{
+
+.connection__decor {
     height: 1px;
     width: 188px;
     background: #DEDEDE;
+    margin: 5px auto 0 auto;
+
 }
 

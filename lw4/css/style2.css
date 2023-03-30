@@ -145,12 +145,14 @@ footer {
     height: 378px;
     width: 1440px;
 }
-.input-mail{
+
+.input-mail {
   display: flex;
   justify-content: center;
   padding-top: 150px;
 }
-.input-mail__txt{
+
+.input-mail__txt {
   border: none;
   height: 50px;
   width: 375px;
@@ -160,9 +162,9 @@ footer {
   padding-left: 20px;
   border-top-left-radius: 3px;
   border-bottom-left-radius: 3px;
-
 }
-.input-mail__btn{
+
+.input-mail__btn {
   border: none;
   height: 50px;
   width: 125px;
@@ -171,9 +173,9 @@ footer {
   color: #F8F8F8;
   border-top-right-radius: 3px;
   border-bottom-right-radius: 3px;
-
 }
-.connection{
+
+.connection {
   position: absolute;
   display: flex;
   flex-direction: column;
@@ -181,15 +183,14 @@ footer {
   padding-left: 625px;
   padding-top: 85px;
 }
-.connection__text{
-  font-family: Oxygen;
-  font-size: 25px;
-  font-weight: 400;
-  line-height: 30px;
+
+.connection__text {
+  font: 400 25px/30px Oxygen;
   text-align: center;
   color: #EFEFEF;
 }
-.connection__decor{
+
+.connection__decor {
   height: 1px;
   width: 188px;
   background: #DEDEDE;
