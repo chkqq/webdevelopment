@@ -83,17 +83,17 @@ func featuredPosts() []featuredPostData {
 		{
 			Title:       "The Road Ahead",
 			Subtitle:    "The road ahead might be paved - it might not be.",
-			ImgModifier: "featured-posts__post_the-road-ahead",
+			ImgModifier: "post__first-post",
 			Author:      "Mat Vogels",
-			AuthorImg:   "static/img/Mat_Volges.png",
+			AuthorImg:   "mat-vogels-face",
 			PublishDate: "September 25, 2015",
 		},
 		{
 			Title:       "From Top Down",
 			Subtitle:    "Once a year, go someplace you've never been before.",
-			ImgModifier: "featured-posts__post_from-top-down",
+			ImgModifier: "post__second-post",
 			Author:      "William Wong",
-			AuthorImg:   "static/img/William_Wong.png",
+			AuthorImg:   "william-wong-face",
 			PublishDate: "September 25, 2015",
 		},
 	}
@@ -111,7 +111,7 @@ func mostRecent() []mostRecentData {
 		},
 		{
 			ImgModifier: "most-recent-posts__post_sunny-side-up",
-			Title:       "Sunny Side Upl",
+			Title:       "Sunny Side Up",
 			Subtitle:    "No place is ever as bad as they tell you it's going to be.",
 			Author:      "Mat Vogels",
 			AuthorImg:   "mat-vogels-face",

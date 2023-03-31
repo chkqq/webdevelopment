@@ -12,8 +12,8 @@ const (
 func main() {
 	mux := http.NewServeMux()
 	mux.HandleFunc("/home", index)
-	mux.HandleFunc("/the-road-ahead", post)
 
+	// Реализуем отдачу статики
 	mux.Handle("/static/", http.StripPrefix("/static/", http.FileServer(http.Dir("./static"))))
 
 	log.Println("Start server " + port)

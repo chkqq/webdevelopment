@@ -16,7 +16,6 @@ a {
     font: normal 12px/20px 'Oxygen', sans-serif;
     letter-spacing: 0.6px;
     color: #FFFFFF;
-    padding-right: 150px;
     display: flex;
     width: 400px;
     justify-content: space-between;
@@ -26,7 +25,6 @@ a {
     text-align: right;
     font: normal 12px/20px 'Oxygen', sans-serif;
     color: #FFFFFF;
-    padding-right: 150px;
     display: flex;
     width: 400px;
     justify-content: space-between; 
@@ -160,7 +158,7 @@ section {
 
 /* posts */
 .post__first-post {
-   background: url("..//pics/NorthLights.png"); 
+   background: #FFFFFF url("../static/pics/NorthLights.png"); 
 }
 
 .post__fetured-card {
@@ -172,7 +170,7 @@ section {
 }
 
 .post__second-post {
-     background: url("..//pics/child.png"); 
+    background: #FFFFFF url("../static/pics/child.png"); 
 }
 
 .post__first-post, .post__second-post {
@@ -310,12 +308,63 @@ section {
     border-radius: 60px;
     width: 26px;
 }
+.mat-vogels-face
+{
+    background: #FFFFFF url(..static/pics/Mat.png);
+    height: 26px;
+    width: 26px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.most-recent-posts
+{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin-bottom: 83px;
+}
+
+.most-recent-posts__post
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border-radius: 3px;
+    height: 291px;
+    width: 296px;
+    background: #FFFFFF;
+    margin: 0 12px 25px 12px;
+}
+
+.most-recent-posts__table
+{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin: 0 140px;
+}
+
+.william-wong-face
+{
+    background: #FFFFFF url(..static/pics/Will.png);
+    height: 26px;
+    width: 26px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
 
 /* recent posts */
-.recent-posts .post {
-    background-color: #FFFFFF;
-    width: 296px;
+.most-recent-posts__post
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border-radius: 3px;
     height: 291px;
+    width: 296px;
+    background: #FFFFFF;
+    margin: 0 12px 25px 12px;
 }
 
 .recent-posts .post__author-name, .recent-posts .post__publication-date {
