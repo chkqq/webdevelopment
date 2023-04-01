@@ -12,7 +12,7 @@ const (
 func main() {
 	mux := http.NewServeMux()
 	mux.HandleFunc("/home", index)
-	mux.HandleFunc("/the-road-ahead", post)
+	mux.HandleFunc("/post", post)
 
 	mux.Handle("/static/", http.StripPrefix("/static/", http.FileServer(http.Dir("./static"))))
 

@@ -1,6 +1,7 @@
 * {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
   }
 
 body {
@@ -16,7 +17,6 @@ a {
     font: normal 12px/20px 'Oxygen', sans-serif;
     letter-spacing: 0.6px;
     color: #FFFFFF;
-    padding-right: 150px;
     display: flex;
     width: 400px;
     justify-content: space-between;
@@ -26,7 +26,6 @@ a {
     text-align: right;
     font: normal 12px/20px 'Oxygen', sans-serif;
     color: #FFFFFF;
-    padding-right: 150px;
     display: flex;
     width: 400px;
     justify-content: space-between; 
@@ -42,6 +41,7 @@ a {
     display: flex;
     justify-content: space-between;
     margin-top: 5px;
+    padding: 0 150px 0 100px;
 
 }
 
@@ -71,7 +71,6 @@ a {
 
 .last-bar__brand-name {
     font: normal 26px/26px 'Lora', serif;
-    padding-left: 100px;
     padding-top: 10px;
     color: #FFFFFF;
 }
@@ -111,7 +110,7 @@ header {
     text-align: center;
     height: 30px;
     background-color: #FFFFFF;
-    padding-top: 10px;
+    padding: 20px 0 40px 0;
 }
 
 .articles-type__link {
@@ -161,6 +160,7 @@ section {
 /* posts */
 .post__first-post {
    background: url("..//pics/NorthLights.png"); 
+
 }
 
 .post__fetured-card {
@@ -169,6 +169,7 @@ section {
     flex-direction: column;
     align-content: flex-end;
     justify-content: flex-end;
+    padding: 0 3% 3% 3%;
 }
 
 .post__second-post {
@@ -222,7 +223,6 @@ section {
 .post__title {
     font: normal 27px/30px 'Lora';
     color: #FFFFFF;
-    padding-left: 3%;
 }
 .post__string {
     background: #EFEFEF;
@@ -234,13 +234,15 @@ section {
 .post__author-featured {
     padding-top: 100%;
 }
+
+.post__recent-card{
+    padding: 1% 3% 0 3%;
+}
 .post__author {
-    padding-top: 5%;
-    padding-left: 3%;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-top: -10px;
+    
 }
 .post__author-name-userpic {
     display: flex;
@@ -250,7 +252,6 @@ section {
 .post__short-description {
     font: normal 14px/25px 'Oxygen', sans-serif;
     opacity: 0.7;
-    padding-left: 3%;
     margin-top: 15px;
 }
 
@@ -263,7 +264,6 @@ section {
 .post__publication-date {
     font: normal 12px/35px 'Oxygen', sans-serif;
     opacity: 0.7;
-    padding-right: 3%;
 }
 
 .recent {
@@ -337,15 +337,18 @@ section {
     color: #7A7A7A;
 }
 
-.site-footer {
+.site-mail {
     background: url("../pics/footer2.png");
     height: 378px;
+}
+.site-footer {
+    margin-top: -95px;
 }
 
 .input-mail{
     display: flex;
     justify-content: center;
-    margin: 39px 0 69px 0;
+    margin: 39px 0 75px 0;
 }
 
 .input-mail__txt {

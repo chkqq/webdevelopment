@@ -22,7 +22,7 @@
     <div class="title">
       <p class="title__name">Let's do it together.</p>
       <p class="title__text">We travel the world in search of stories. Come along the ride.</p>
-      <a href="the-road-ahead.html" class="title__site-transit">View Latest Posts</a>
+      <a href="/post" class="title__site-transit">View Latest Posts</a>
     </div>
   </header>
   <div>
@@ -51,7 +51,7 @@
               <p class="post__short-description">{{ .Subtitle }}</p>  
               <div class="post__author">
                 <div class="post__author-name-userpic ">
-                  <img class="{{ .AuthorImg }}" alt="user face">
+                  <img class="mat-vogels-face {{ .AuthorImg }}">
                   <span class="post__author-name">{{ .Author }}</span>
                 </div>
                 <span class="post__publication-date">{{ .PublishDate }}</span>
@@ -71,13 +71,13 @@
         <div class="most-recent-posts__table">
           {{ range .MostRecent }}
         <article class="most-recent-posts__post">         
-          <img class="post__image {{ .ImgModifier }}" src="pics/ballon.jpg" >
+          <img class="post__image {{ .ImgModifier }}">
           <span class="post__title">{{ .Title }}</span>
           <p class="post__short-description">{{ .Subtitle }}</p><br>
             <hr class="post__string">
             <div class="post__author">
               <div class="post__author-name-userpic">
-                <img class="{{ .AuthorImg }}" alt="user face">
+                <img class="mat-vogels-face {{ .AuthorImg }}">
                 <span class="post__author-name">{{ .Author }}</span>
               </div>
               <span class="post__publication-date">{{ .PublishDate }}</span>
