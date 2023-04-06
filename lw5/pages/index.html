@@ -43,9 +43,9 @@
           <p>
           <hr class="featured__string">
         </div>       
-        <div class="post__post-line">
+        <div class="post__fetured-table">
           {{ range .FeaturedPosts }}
-          <article class="post {{ .ImgModifier }}">
+          <article class="post__fetured-article {{ .ImgModifier }}">
             <div class="post__fetured-card">             
               <p class="post__title">{{ .Title }}</p>
               <p class="post__short-description">{{ .Subtitle }}</p>  
@@ -68,10 +68,11 @@
         <hr class="recent__string">
       </div>
       <div class="recent-posts">               
-        <div class="most-recent-posts__table">
+        <div class="post__recent-table">
           {{ range .MostRecent }}
-        <article class="most-recent-posts__post">         
+        <article class="post__recent-post">         
           <img class="post__image {{ .ImgModifier }}">
+          <div class="post__recent-card">
           <span class="post__title">{{ .Title }}</span>
           <p class="post__short-description">{{ .Subtitle }}</p><br>
             <hr class="post__string">
@@ -82,13 +83,13 @@
               </div>
               <span class="post__publication-date">{{ .PublishDate }}</span>
             </div>
+          </div>
         </article>
         {{ end }}
        </div>
      </div>
     </section>
-    
-  <footer class="site-footer"> 
+    <div class="site-mail">
     <div class="connection">
       <p class="connection__text">Stay in touch</p>
       <div class="connection__decor"></div>
@@ -96,7 +97,9 @@
     <div class="input-mail">
       <input class="input-mail__txt" type="text" placeholder="Enter your email address">
       <button class="input-mail__btn">Search</button>
-    </div>   
+    </div>  
+    </div> 
+  <footer class="site-footer">     
     <div class="last-bar">
       <p class="last-bar__brand-name">Escape.</p>
       <nav class="last-bar__navigation">
