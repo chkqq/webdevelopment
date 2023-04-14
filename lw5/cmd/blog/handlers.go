@@ -8,16 +8,16 @@ import (
 
 type indexPage struct {
 	Title         string
-	FeaturedPosts []featuredPostData
-	MostRecent    []mostRecentData
+	FeaturedPosts []postData
+	MostRecent    []postData
 }
 
 type postPage struct {
-	Title   string
-	Content string
+	Title    string
+	Subtitle string
 }
 
-type featuredPostData struct {
+type postData struct {
 	Title       string
 	Subtitle    string
 	ImgModifier string
@@ -26,14 +26,14 @@ type featuredPostData struct {
 	PublishDate string
 }
 
-type mostRecentData struct {
-	Title       string
-	Subtitle    string
-	ImgModifier string
-	Author      string
-	AuthorImg   string
-	PublishDate string
-}
+// type mostRecentData struct {
+// 	Title       string
+// 	Subtitle    string
+// 	ImgModifier string
+// 	Author      string
+// 	AuthorImg   string
+// 	PublishDate string
+// }
 
 func index(w http.ResponseWriter, r *http.Request) {
 	ts, err := template.ParseFiles("pages/index.html") // Главная страница блога
@@ -46,7 +46,7 @@ func index(w http.ResponseWriter, r *http.Request) {
 	data := indexPage{
 		Title:         "Escape",
 		FeaturedPosts: featuredPosts(),
-		MostRecent:    mostRecent(),
+		MostRecent:    mostRecentPosts(),
 	}
 
 	err = ts.Execute(w, data) // Заставляем шаблонизатор вывести шаблон в тело ответа
@@ -66,8 +66,8 @@ func post(w http.ResponseWriter, r *http.Request) {
 	}
 
 	data := postPage{
-		Title:   "The Road Ahead",
-		Content: "The road ahead might be paved - it might not be.",
+		Title:    "The Road Ahead",
+		Subtitle: "The road ahead might be paved - it might not be.",
 	}
 
 	err = ts.Execute(w, data)
@@ -78,8 +78,8 @@ func post(w http.ResponseWriter, r *http.Request) {
 	}
 }
 
-func featuredPosts() []featuredPostData {
-	return []featuredPostData{
+func featuredPosts() []postData {
+	return []postData{
 		{
 			Title:       "The Road Ahead",
 			Subtitle:    "The road ahead might be paved - it might not be.",
@@ -99,8 +99,10 @@ func featuredPosts() []featuredPostData {
 	}
 }
 
-func mostRecent() []mostRecentData {
-	return []mostRecentData{
+// rename mostRecentPosts
+
+func mostRecentPosts() []postData {
+	return []postData{
 		{
 			ImgModifier: "most-recent-posts__post_still-standing-tall",
 			Title:       "Still Standing Tall",

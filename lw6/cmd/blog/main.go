@@ -3,8 +3,13 @@ package main
 // для чего имопрт?
 // для подключения пакетов логирования и пакета для http сервера
 import (
+	"database/sql" // Импортируем для возможности подключения к MySQL
+	"fmt"
 	"log"
 	"net/http"
+
+	_ "github.com/go-sql-driver/mysql"
+	"github.com/jmoiron/sqlx"
 )
 
 // на каком порту нельзя запустить сервер?
@@ -15,21 +20,36 @@ import (
 // Порты 80 и 443: эти порты зарезервированы для HTTP и HTTPS соответственно, и они используются для веб-серверов.
 
 const (
-	port = ":3000"
+	port         = ":3000"
+	dbDriverName = "mysql"
 )
 
 func main() {
-	mux := http.NewServeMux()
-	mux.HandleFunc("/home", index)
-	mux.HandleFunc("/post", post)
 
-	// за что отвечает след строка? Это отдача статического контента из папки static
-	mux.Handle("/static/", http.StripPrefix("/static/", http.FileServer(http.Dir("./static"))))
-
-	log.Println("Start server " + port)
-	// разобраться, всегда ли ошибка. Ошибка бывает когда не получается запустить сервер
-	err := http.ListenAndServe(port, mux)
+	db, err := openDB() // Открываем соединение к базе данных в самом начале
 	if err != nil {
 		log.Fatal(err)
 	}
+
+	dbx := sqlx.NewDb(db, dbDriverName) // Расширяем стандартный клиент к базе
+
+	//createDatabase(dbx)
+
+	mux := http.NewServeMux()
+	mux.HandleFunc("/home", index(dbx))
+	mux.HandleFunc("/post", post)
+
+	// Реализуем отдачу статики
+	mux.Handle("/static/", http.StripPrefix("/static/", http.FileServer(http.Dir("./static"))))
+
+	fmt.Println("Start server")
+	err = http.ListenAndServe(port, mux)
+	if err != nil {
+		log.Fatal(err)
+	}
+}
+
+func openDB() (*sql.DB, error) {
+	// Здесь прописываем соединение к базе данных
+	return sql.Open(dbDriverName, "root:Q19euplzo12345)@tcp(localhost:3306)/blog?charset=utf8mb4&collation=utf8mb4_unicode_ci&parseTime=true")
 }

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>the-road-ahead</title>
+  <link rel="stylesheet" href="static/css/style2.css">
+  <link href="https://fonts.googleapis.com/css2?family=Lora&family=Oxygen&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header class="header">
+    <div class="site-manage">
+      <a class="site-manage__brand-name" href="/home">Escape.</a>
+      <nav class="site-manage__navigation">
+        <a class="navigation__link" href="#">home</a> 
+        <a class="navigation__link" href="#">categories</a> 
+        <a class="navigation__link" href ="#">about</a> 
+        <a class="navigation__link" href="#">contact</a>
+      </nav>
+    </div>
+    <div class="title">
+      <p class="title__name">{{ .Title }}</p>
+      <p class="title__discription">{{ .Subtitle }}</p>
+    </div>
+  </header>
+  <div class="post__image"></div>
+  <section class="post">
+    <div class="post__text">
+      {{ .Content}}
+    </div>
+  </section>
+  <footer>
+    <div class="connection">
+      <p class="connection__text">Stay in touch</p><br>
+      <div class="connection__decor"></div>
+    </div>
+    <div class="input-mail">
+      <input class="input-mail__txt" type="text" placeholder="Enter your email address">
+      <button class="input-mail__btn">Search</button>
+    </div>
+    <div class="last-bar">
+      <p class="last-bar__brand-name">Escape.</p>
+      <nav class="last-bar__navigation">
+        <a class="navigation__link" href="#">home</a> 
+        <a class="navigation__link" href="#">categories</a> 
+        <a class="navigation__link" href="#">about</a> 
+        <a class="navigation__link" href="#">contact</a>
+      </nav>
+    </div>
+  </footer>  
+</body>
+</html>

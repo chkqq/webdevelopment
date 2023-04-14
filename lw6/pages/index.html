@@ -45,13 +45,13 @@
         </div>       
         <div class="post__fetured-table">
           {{ range .FeaturedPosts }}
-          <article class="post__fetured-article {{ .ImgModifier }}">
+          <article class="post__fetured-article" style="background: url({{.ImgModifier}});">
             <div class="post__fetured-card">             
               <p class="post__title">{{ .Title }}</p>
               <p class="post__short-description">{{ .Subtitle }}</p>  
               <div class="post__author">
                 <div class="post__author-name-userpic ">
-                  <img class="mat-vogels-face {{ .AuthorImg }}">
+                  <img class="post__author-userpic" style="background: url({{.AuthorImg}});">
                   <span class="post__author-name">{{ .Author }}</span>
                 </div>
                 <span class="post__publication-date">{{ .PublishDate }}</span>
@@ -71,14 +71,14 @@
         <div class="post__recent-table">
           {{ range .MostRecentPosts }}
         <article class="post__recent-post">         
-          <img class="post__image {{ .ImgModifier }}">
+          <img class="post__image" style="background: url({{.ImgModifier}});">
           <div class="post__recent-card">
           <span class="post__title">{{ .Title }}</span>
           <p class="post__short-description">{{ .Subtitle }}</p><br>
             <hr class="post__string">
             <div class="post__author">
               <div class="post__author-name-userpic">
-                <img class="mat-vogels-face {{ .AuthorImg }}">
+                <img class="post__author-userpic" style="background: url({{.AuthorImg}});">
                 <span class="post__author-name">{{ .Author }}</span>
               </div>
               <span class="post__publication-date">{{ .PublishDate }}</span>
