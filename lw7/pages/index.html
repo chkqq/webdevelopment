@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>index</title>
+  <link rel="stylesheet" href="static/css/style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Lora&family=Oxygen&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header>
+    <div class="site-manage">
+      <a class="site-manage__brand-name" href="#">Escape.</a>
+      <nav class="site-manage__navigation">
+        <a class="navigation__link" href="#">home</a>
+        <a class="navigation__link" href="#">categories</a>
+        <a class="navigation__link" href="#">about</a> 
+        <a class="navigation__link" href="#">contact</a>
+      </nav>
+    </div>
+    <div class="title">
+      <p class="title__name">Let's do it together.</p>
+      <p class="title__text">We travel the world in search of stories. Come along the ride.</p>
+      <a href="/post" class="title__site-transit">View Latest Posts</a>
+    </div>
+  </header>
+  <div>
+    <nav class="articles-type">
+      <a class="articles-type__link" href="#">Nature</a> 
+      <a class="articles-type__link" href="#">Photography</a> 
+      <a class="articles-type__link" href="#">Relaxation</a> 
+      <a class="articles-type__link" href="#">Vacation</a> 
+      <a class="articles-type__link" href="#">Travel</a> 
+      <a class="articles-type__link" href="#">Adventure</a>
+    </nav>
+  </div>
+    <section class="fetured">
+      <div class="featured-posts">
+        <div class="featured-posts__title">
+          <p class="fetured-posts__name">
+            Featured Posts
+          <p>
+          <hr class="featured__string">
+        </div>       
+        <div class="post__fetured-table">
+          {{ range .FeaturedPosts }}
+          <article class="post__fetured-article" style="background: url({{.ImgModifier}});">
+            <div class="post__fetured-card">             
+              <p class="post__title">{{ .Title }}</p>
+              <p class="post__short-description">{{ .Subtitle }}</p>  
+              <div class="post__author">
+                <div class="post__author-name-userpic ">
+                  <img class="post__author-userpic" style="background: url({{.AuthorImg}});">
+                  <span class="post__author-name">{{ .Author }}</span>
+                </div>
+                <span class="post__publication-date">{{ .PublishDate }}</span>
+              </div>
+            </div>
+          </article>
+          {{ end }}
+        </div>
+      </div>
+    </section>
+    <section class="recent">
+      <div class="recent__title">
+        <p class="recents__name">Most Recent</p>
+        <hr class="recent__string">
+      </div>
+      <div class="recent-posts">               
+        <div class="post__recent-table">
+          {{ range .MostRecentPosts }}
+        <article class="post__recent-post">         
+          <img class="post__image" style="background: url({{.ImgModifier}});">
+          <div class="post__recent-card">
+          <span class="post__title">{{ .Title }}</span>
+          <p class="post__short-description">{{ .Subtitle }}</p><br>
+            <hr class="post__string">
+            <div class="post__author">
+              <div class="post__author-name-userpic">
+                <img class="post__author-userpic" style="background: url({{.AuthorImg}});">
+                <span class="post__author-name">{{ .Author }}</span>
+              </div>
+              <span class="post__publication-date">{{ .PublishDate }}</span>
+            </div>
+          </div>
+        </article>
+        {{ end }}
+       </div>
+     </div>
+    </section>
+    <div class="site-mail">
+    <div class="connection">
+      <p class="connection__text">Stay in touch</p>
+      <div class="connection__decor"></div>
+    </div>
+    <div class="input-mail">
+      <input class="input-mail__txt" type="text" placeholder="Enter your email address">
+      <button class="input-mail__btn">Search</button>
+    </div>  
+    </div> 
+  <footer class="site-footer">     
+    <div class="last-bar">
+      <p class="last-bar__brand-name">Escape.</p>
+      <nav class="last-bar__navigation">
+        <a class="navigation__link" href="#">home</a> 
+        <a class="navigation__link" href="#">categories</a> 
+        <a class="navigation__link" href="#">about</a> 
+        <a class="navigation__link" href="#">contact</a>
+      </nav>  
+    </div>
+  </footer>
+</body>
+</html>
