@@ -124,15 +124,15 @@ header {
 .post__image { 
   height: 534px;
   border-radius: 3px;
-  padding-top: 10%;
+  margin-top: 10%;
   background: url("../pics/polarLights2.png");
 }
 
 .post__text {
   width: 960px;
   height: 1431px;
-  left: auto;
-  right: auto;
+  margin: 0 auto 0 auto;
+  padding-top: 75px;
   font: 400 normal 24px/35px 'Oxygen';
   color: #101315;
 }

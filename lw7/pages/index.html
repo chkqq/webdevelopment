@@ -46,6 +46,7 @@
         <div class="post__fetured-table">
           {{ range .FeaturedPosts }}
           <article class="post__fetured-article" style="background: url({{.ImgModifier}});">
+            <a href="/post/{{.ID}}">
             <div class="post__fetured-card">             
               <p class="post__title">{{ .Title }}</p>
               <p class="post__short-description">{{ .Subtitle }}</p>  
@@ -57,6 +58,7 @@
                 <span class="post__publication-date">{{ .PublishDate }}</span>
               </div>
             </div>
+            </a>
           </article>
           {{ end }}
         </div>
@@ -72,6 +74,7 @@
           {{ range .MostRecentPosts }}
         <article class="post__recent-post">         
           <img class="post__image" style="background: url({{.ImgModifier}});">
+          <a href="/post/{{.ID}}">
           <div class="post__recent-card">
           <span class="post__title">{{ .Title }}</span>
           <p class="post__short-description">{{ .Subtitle }}</p><br>
@@ -84,6 +87,7 @@
               <span class="post__publication-date">{{ .PublishDate }}</span>
             </div>
           </div>
+          </a>
         </article>
         {{ end }}
        </div>
