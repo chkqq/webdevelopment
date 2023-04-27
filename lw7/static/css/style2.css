@@ -125,7 +125,9 @@ header {
   height: 534px;
   border-radius: 3px;
   margin-top: 10%;
-  background: url("../pics/polarLights2.png");
+  background: url(../pics/NorthLights.png);
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .post__text {
