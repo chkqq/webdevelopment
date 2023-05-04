@@ -18,9 +18,10 @@ type indexPage struct {
 }
 
 type postData struct {
-	Title    string `db:"title"`
-	SubTitle string `db:"subtitle"`
-	Content  string `db:"content"`
+	Title       string `db:"title"`
+	SubTitle    string `db:"subtitle"`
+	ImgModifier string `db:"image_url"`
+	Content     string `db:"content"`
 }
 
 type featuredPostData struct {
@@ -190,6 +191,7 @@ func postByID(db *sqlx.DB, postID int) (postData, error) {
 		SELECT
 			title,
 			subtitle,
+			image_url,
 			content
 		FROM
 			post

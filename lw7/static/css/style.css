@@ -247,20 +247,23 @@ section {
 }
 
 .post__short-description {
-    font: normal 14px/25px 'Oxygen', sans-serif;
+    font: normal 14px/25px 'Oxygen';
     opacity: 0.7;
     margin-top: 15px;
+    color: #FFFFFF;
 }
 
 .post__author-name {
     font: normal 12px/35px 'Oxygen', sans-serif;
     opacity: 0.7;
     padding-left: 10px;
+    color: #FFFFFF;
 }
 
 .post__publication-date {
     font: normal 12px/35px 'Oxygen', sans-serif;
     opacity: 0.7;
+    color: #FFFFFF;
 }
 
 .recent {
@@ -269,9 +272,6 @@ section {
 }
 
 .post__recent-card {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
     padding: 0% 3% 1% 3%;
 
 }
