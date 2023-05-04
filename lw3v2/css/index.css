@@ -1,0 +1,146 @@
+header {
+    background: url("../pics/hills.png");
+    width: 1440px;
+    height: 500px;
+}
+
+.title {
+    text-align: center;
+}
+
+.title__text {
+    font: normal 19px/20px 'Oxygen', sans-serif;
+    color: #FFFFFF;
+    font-size: 19px;
+    line-height: 20px;
+    opacity: 0.63;
+}
+
+.title__name {
+    font: normal 50px/51px 'Lora', serif;
+    color: #FFFFFF;
+    letter-spacing: 2px;
+    /* margin: 12px;
+    margin-top: 100px; */
+}
+
+.title__site-transit {
+    width: 167px;
+    background-color: #DD783F;
+    border: none;
+    border-radius: 3px;
+    display: inline-block;
+    font: normal 13px/20px 'Oxygen', sans-serif;
+    color: #FFFFFF;
+    margin: 28px;
+    padding: 12px 0 12px 0;
+}
+
+.articles-type {
+    text-align: center;
+    height: 30px;
+    background-color: #FFFFFF;
+    padding: 20px 0 20px 0;
+}
+
+.articles-type__link {
+    text-align: center;
+    font: normal 14px/20px 'Lora', serif;
+    color: #768088;
+    padding: 20px;
+    border: 1px solid #FFFFFF;
+}
+
+.articles-type__link:hover {
+    border-color: #768088;
+    transition: 350ms;
+}
+
+.featured__post-name, .recent__name {
+    width: 161px;
+    font: normal 20px/27px 'Oxygen', sans-serif;
+    color: #2E2E2E;
+    letter-spacing: 2px;
+    border-bottom: 1px solid #2E2E2E;
+}
+.featured {
+    background-color: #F6F6F6;
+    padding: 0px 10px 0px 10px;
+    color: #FFFFFF;
+
+}
+
+.featured__first-post {
+    height: 280px;
+    width: 460px; 
+    border-radius: 3px;
+    background: url("..//pics/NorthLights.png"); 
+}
+
+.featured__second-post {
+    height: 280px;
+    width: 460px; 
+    border-radius: 3px;
+    background: url("..//pics/child.png"); 
+}
+
+.featured__post-title {
+    font: normal 27px/30px 'Lora';
+}
+
+.featured__post-short-description, .featured__post-author-name, .featured__post-publication-date {
+    font: normal 14px/25px 'Oxygen', sans-serif;
+    opacity: 0.7;
+}
+
+.featured__post-userpic, .recent__post-userpic {
+    border-radius: 60px;
+    width: 26px;
+}
+
+.featured__post-theme{
+    height: 26px;
+    width: 87px;
+    background: #DD783F;
+    border-radius: 2px;
+}
+
+.featured__post-theme-text {
+    padding: 6px;
+    font: normal 400 12px/13px 'Oxygen';
+    color: #FFFFFF;
+    text-transform: uppercase;
+}
+
+.recent {
+    background-color: #F6F6F6;
+    padding: 0px 10px 0px 10px;
+}
+
+.recent__post {
+    background-color: #FFFFFF;
+    width: 296px;
+    height: 291px;
+}
+
+.recent__post-image {
+    width: 296px;
+    height: 150px;
+}
+
+.recent__post-title {
+    font: 16px/21px'Lora', serif;
+    color: #101315;
+}
+
+.recent__post-string {
+    background: #EFEFEF;
+    height: 1px;
+    border: none;
+}
+.recent__post-author-name, .recent__post-publication-date, .recent__post-short-description {
+    color: #999999;
+    font: 12px/35px 'Oxygen', sans-serif;
+    opacity: 0.7;
+}
+
