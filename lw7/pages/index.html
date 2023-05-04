@@ -5,7 +5,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>index</title>
-  <link rel="stylesheet" href="static/css/style.css">
+  <link rel="stylesheet" href="static/css/style.css" type="text/css">
   <link href="https://fonts.googleapis.com/css2?family=Lora&family=Oxygen&display=swap" rel="stylesheet">
 </head>
 <body>
@@ -46,6 +46,7 @@
         <div class="post__fetured-table">
           {{ range .FeaturedPosts }}
           <article class="post__fetured-article" style="background: url({{.ImgModifier}});">
+            <a href="/post/{{.ID}}">
             <div class="post__fetured-card">             
               <p class="post__title">{{ .Title }}</p>
               <p class="post__short-description">{{ .Subtitle }}</p>  
@@ -57,6 +58,7 @@
                 <span class="post__publication-date">{{ .PublishDate }}</span>
               </div>
             </div>
+            </a>
           </article>
           {{ end }}
         </div>
@@ -70,8 +72,10 @@
       <div class="recent-posts">               
         <div class="post__recent-table">
           {{ range .MostRecentPosts }}
-        <article class="post__recent-post">         
+        <article class="post__recent-post">
+          <a href="/post/{{.ID}}">
           <img class="post__image" style="background: url({{.ImgModifier}});">
+               
           <div class="post__recent-card">
           <span class="post__title">{{ .Title }}</span>
           <p class="post__short-description">{{ .Subtitle }}</p><br>
@@ -84,6 +88,7 @@
               <span class="post__publication-date">{{ .PublishDate }}</span>
             </div>
           </div>
+          </a>
         </article>
         {{ end }}
        </div>
