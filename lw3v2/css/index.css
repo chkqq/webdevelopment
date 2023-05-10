@@ -56,7 +56,7 @@ header {
     transition: 350ms;
 }
 
-.featured__post-name, .recent__name {
+.featured__name, .recent__name {
     width: 161px;
     font: normal 20px/27px 'Oxygen', sans-serif;
     color: #2E2E2E;
