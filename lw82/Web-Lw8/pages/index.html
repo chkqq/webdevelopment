@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <title>Home</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lora&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lora&family=Oxygen&display=swap" rel="stylesheet">
+    <link href="../static/css/home.css" rel="stylesheet" type="text/css">
+    <link rel="icon" href="../static/img/favicon.ico">
+  </head>
+
+  <body class="page">
+    <!-- HEADER -->
+    <header class="header">
+      <div class="header__nav">
+        <a href="#" class="header__nav-item header__logo">Escape.</a>
+        <nav class="header__nav-item header__menu">
+          <a href="#" class="header__menu-link">Home</a>
+          <a href="#" class="header__menu-link">Categories</a>
+          <a href="#" class="header__menu-link">About</a>
+          <a href="#" class="header__menu-link">Contact</a>
+        </nav>
+      </div>
+      <div class="header__content">
+        <h1 class="header__title">Let's do it together.</h1>
+        <p class="header__subtitle">We travel the world in search of stories. Come along for the ride.</p>
+        <button class="header__button">View Latest Posts</button>
+      </div>
+    </header>
+    <!--/ HEADER -->
+
+    <!-- SECTION: TAGS -->
+    <section class="tags">
+      <div class="tags__content tags__list">
+        <a href="#" class="tags__list-item"><span>Nature</span></a>
+        <a href="#" class="tags__list-item"><span>Photography</span></a>
+        <a href="#" class="tags__list-item"><span>Relaxation</span></a>
+        <a href="#" class="tags__list-item"><span>Vacation</span></a>
+        <a href="#" class="tags__list-item"><span>Travel</span></a>
+        <a href="#" class="tags__list-item"><span>Adventure</span></a>
+      </div>
+    </section>
+    <!--/ SECTION: TAGS -->
+
+    <!-- SECTION: POSTS -->
+    <section class="posts">
+      <!-- FEATURED-POSTS -->
+      <section class="featured-posts">
+        <h2 class="featured-posts__title">Featured Posts</h2>
+        <div class="featured-posts__board">
+          {{ range .FeaturedPosts }}
+          <article class="featured-posts__post featured-post" style="background: url({{.ImgModifier}});">
+            <a href="/post/{{.ID}}">
+              <div class="featured-post__tag {{.Tag}}">
+                <span>{{.Tag}}</span>
+              </div>
+              <p class="featured-post__name">{{ .Title }}</p>
+              <p class="featured-post__text">{{ .Subtitle }}</p>
+              <div class="featured-post__info">
+                <div class="featured-post__author-info">
+                  <span class="featured-post__author-icon" style="background: url({{.AuthorImg}});"></span>
+                  <span class="featured-post__author-name">{{ .Author }}</span>
+                </div>
+                <span class="featured-post__date">{{ .PublishDate }}</span>
+              </div>
+            </a>
+          </article>
+          {{ end }}
+        </div>
+      </section>
+      <!--/ FEATURED-POSTS -->
+
+      <!-- MOST-RECENT-POSTS -->
+      <section class="most-recent-posts">
+        <h2 class="most-recent-posts__title">Most Recent</h2>
+        <div class="most-recent-posts__board">
+          {{ range .MostRecentPosts }}
+          <article class="most-recent-posts__post most-recent-post">
+            <a href="/post/{{.ID}}">
+              <div class="most-recent-post__cover" style="background: url({{.ImgModifier}});">
+                <div class="most-recent-post__tag {{.Tag}}">
+                  <span>{{.Tag}}</span>
+                </div>
+              </div>
+            </a>
+            <div class="most-recent-post__content">
+              <p class="most-recent-post__name">{{.Title}}</p>
+              <p class="most-recent-post__text">{{.Subtitle}}</p>
+            </div>
+            <div class="most-recent-post__rectangle"></div>
+            <div class="most-recent-post__info">
+              <div class="most-recent-post__author-info">
+                <span class="most-recent-post__author-icon" style="background: url({{.AuthorImg}});"></span>
+                <span class="most-recent-post__author-name">{{.Author}}</span>
+              </div>
+              <span class="most-recent-post__date">{{.PublishDate}}</span>
+            </div>
+          </article>
+          {{ end }}
+        </div>
+      </section>
+      <!--/ MOST-RECENT-POSTS -->
+    </section>
+    <!--/ SECTION: POSTS -->
+
+      
+
+      
+    </div>
+    <!-- FOOTER -->
+    <footer class="footer">
+      <div class="footer__head">
+        <h2 class="footer__title">Stay in Touch</h2>
+        <form class="footer__form">
+          <input placeholder="Enter your email address" type="text" value="" name="email" class="footer__input">
+          <input type="submit" value="Submit" class="footer__input">
+        </form>
+      </div>
+
+      <div class="footer__bottom">
+        <div class="footer__nav">
+          <a class="footer__nav-item footer__logo">Escape.</a>
+          <nav class="footer__nav-item footer__menu">
+            <a href="#" class="footer__menu-link">Home</a>
+            <a href="#" class="footer__menu-link">Categories</a>
+            <a href="#" class="footer__menu-link">About</a>
+            <a href="#" class="footer__menu-link">Contact</a>
+          </nav>
+        </div>
+      </div>
+    </footer>
+    <!--/ FOOTER -->
+  </body>
+</html>

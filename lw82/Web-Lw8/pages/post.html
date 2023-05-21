@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>{{.Title}}</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lora&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Lora&family=Oxygen&display=swap" rel="stylesheet">
+  <!-- <link href="../static/css/styles.css" rel="stylesheet" type="text/css"> -->
+  <link href="../static/css/post.css" rel="stylesheet" type="text/css">
+  <link rel="icon" href="../static/img/favicon.ico">
+</head>
+
+  <body class="page">
+    <!-- HEADER -->
+    <header class="header">
+      <div class="header__nav">
+        <a class="header__nav-item header__logo">Escape.</a>
+        <nav class="header__nav-item header__menu">
+          <a href="" class="header__menu-link">Home</a>
+          <a href="" class="header__menu-link">Categories</a>
+          <a href="" class="header__menu-link">About</a>
+          <a href="" class="header__menu-link">Contact</a>
+        </nav>
+      </div>
+      <div class="header__content">
+        <h1 class="header__title">{{.Title}}</h1>
+        <p class="header__subtitle">{{.SubTitle}}</p>
+      </div>
+      <div class="header__cover"></div>
+    </header>
+    <!--/ HEADER -->
+
+    <!-- PAGE-CONTENT -->
+    <div class="page__content">
+      <p class="page__text">
+        {{.Content}}
+      </p>
+    </div>
+  
+    <!-- FOOTER -->
+    <footer class="footer">
+      <div class="footer__head">
+        <h2 class="footer__title">Stay in Touch</h2>
+        <form class="footer__form">
+          <input placeholder="Enter your email address" type="text" value="" name="email" class="footer__input">
+          <input type="submit" value="Submit" class="footer__input">
+        </form>
+      </div>
+
+      <div class="footer__bottom">
+        <div class="footer__nav">
+          <a class="footer__nav-item footer__logo">Escape.</a>
+          <nav class="footer__nav-item footer__menu">
+            <a href="" class="footer__menu-link">Home</a>
+            <a href="" class="footer__menu-link">Categories</a>
+            <a href="" class="footer__menu-link">About</a>
+            <a href="" class="footer__menu-link">Contact</a>
+          </nav>
+        </div>
+      </div>
+    </footer>
+    <!--/ FOOTER -->
+  </body>
+</html>

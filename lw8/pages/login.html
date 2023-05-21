@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Страница авторизации</title>
+        <link href="https://fonts.googleapis.com/css2?family=Oxygen:wght@300&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Lora&display=swap" rel="stylesheet">
+        <link href="../static/css/login.css" rel="stylesheet">
+        <script src="../static/js/admin.js"></script>
+    </head>
+    <body>
+        <div id="container">
+            <img class="main__background" src="{{ .Background }}">
+            {{ range .Header }}
+                <header class="header z-top">
+                    <img class="header__escape" src="{{ .Escape }}" alt="Escape Author">
+                    <p class="header__title">{{ .Title }}</p>
+                </header>
+            {{ end }}
+            {{ range .Main }}
+                <section class="main z-top">
+                    <h1 class="main__title">{{ .Title }}</h1>
+                    <form class="main__form">
+                        <div class="main__email">
+                            <p class="main__comment">{{ .Email }}</p>
+                            <input class="main__field" type="email">
+                        </div>
+                        <div class="main__pass">
+                            <p class="main__comment">{{ .Pass }}</p>
+                                <input class="main__field main__field_pass" type="password" id="Pass">
+                                <img onclick="changeInputType()" class="main__eye" src="../static/svg_files/eye.svg" alt="eye">   
+                                <button class="main__button">{{ .Button }}</button>                        
+                        </div>
+                        
+                    </form>
+                </section>
+            {{ end }}
+        </div>
+    </body>
+</html>

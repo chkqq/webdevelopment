@@ -1,0 +1,77 @@
+:root
+{
+    --text-primary: #2E2E2E;
+    --text-primary-inverse: #FFFFFF;
+    --text-secondary: #7A7A7A;
+    --text-description: #999999;
+
+    --background-default: #FFFFFF;
+    --background-secondary: #F7F7F7;
+    --background-button: #DD783F;
+    --background-critical: #FFEBEA;
+    --background-success: #E6FCEF;
+
+    --border: #EAEAEA;
+    --border-accent: #2E2E2E;
+    --border-hovered: #D3D3D3;
+
+    --focus: rgba(221, 120, 63, 0.4);
+    --icon: #2E2E2E;
+
+    --status-critical: #E86961;
+    --status-success: #67C38C;
+
+    --tag-nature: #E6C728;
+    --tag-photography: #A872B7;
+    --tag-adventure: #DD783F;
+    --tag-relaxation: #4AAEC2;
+    --tag-vacation: #D25F7C;
+    --tag-travel: #49AE5C;
+}
+
+*
+{
+    margin: 0;
+    padding: 0;
+}
+
+body
+{
+    background: #F7F7F7;
+}
+
+a 
+{
+    text-decoration: none;
+}
+
+*, *::before, *::after 
+{
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.page
+{
+    display: flex;
+    display: -webkit-box;
+    display: -ms-flexbox;
+
+    flex-direction: column;
+    -ms-flex-direction: column;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    
+    max-width: 100vw-30px;
+    min-height: 100vh;
+}
+
+.hidden
+{
+    display: none;
+}
+
+.disabled
+{
+    display: none;
+}
