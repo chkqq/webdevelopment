@@ -15,11 +15,76 @@ let post = {
 const readerAuthor = new FileReader();
       readerBig = new FileReader();
       readerSmall = new FileReader();
-      
-const title = document.getElementById('title');
-const subTitle = document.getElementById('description');
-const author = document.getElementById('author');
+
+const title = document.getElementById('Title');
+const subTitle = document.getElementById('Subtitle');
+const author = document.getElementById('Author-name');
 const publishDate = document.getElementById('publishDate');
+
+// window.addEventListener("DOMContentLoaded", (event) => {
+//     console.log("page is fully loaded");
+//     console.log(document.getElementById("testButton"));   
+//     document.getElementById('publishButton').addEventListener('click', () => {
+//     console.log('CLICKED ON BUTTON');
+//     PrintToLog();
+//   });
+// });
+
+document.getElementById('author-photo').addEventListener('change', () => {
+    ChangeIcon();
+});
+
+document.getElementById('remove-author').addEventListener('click', () => {
+    RemoveIcon();
+});
+
+document.getElementById('big-remove-image').addEventListener('click', () => {
+    DeleteImage('big');
+});
+
+document.getElementById('big-hero-image').addEventListener('change', () => {
+    ChangeImage('big');
+});
+
+document.getElementById('small-remove-image').addEventListener('click', () => {
+    DeleteImage('small');
+});
+
+document.getElementById('small-hero-image').addEventListener('change', () => {
+    ChangeImage('small');
+});
+
+document.getElementById('content__field-for-content').addEventListener('change', () => {
+    ChangeContent();
+});
+
+document.getElementById('Title').addEventListener('focus', () => {
+    Select('Title');
+});
+
+document.getElementById('Title').addEventListener('blur', () => {
+    NotSelect('Title');
+});
+
+document.getElementById('Subtitle').addEventListener('focus', () => {
+    Select('Subtitle');
+});
+
+document.getElementById('Subtitle').addEventListener('blur', () => {
+    NotSelect('Subtitle');
+});
+
+document.getElementById('Author-name').addEventListener('focus', () => {
+    Select('Author-name');
+});
+
+document.getElementById('Author-name').addEventListener('blur', () => {
+    NotSelect('Author-name');
+});
+
+document.getElementById('publishDate').addEventListener('change', () => {
+    datachange();
+});
 
 function Click()
 {
@@ -56,7 +121,6 @@ function PrintToLog()
 
     if (NotNull)
     {
-        Preview();
         massage.classList.add('main-top__massage_complited');
         icon.src = "../static/svg_files/check_circle.svg";
         text.textContent = "Publish Complete!"
@@ -80,159 +144,72 @@ function PrintToLog()
         massage.insertBefore(text, massage.children[0]);
         massage.insertBefore(icon, massage.children[0]);
     }
+ 
 }
 
-// function Preview()
-// {
-//     let getTitleArticle = document.getElementById('preview-title-article');
-//         getTitle = document.getElementById('preview-title');
-//         getSubTitle = document.getElementById('preview-subtitle');
-//         getSubTitleArticle = document.getElementById('preview-subtitle-article');
-//         getAuthorName = document.getElementById('preview-author-name');
-//         getAuthorPhoto = document.getElementById('preview-author-photo');
-//         getData = document.getElementById('preview-data');
-//         getBigImage = document.getElementById('preview-big-image');
-//         getSmallImage = document.getElementById('preview-small-image');
+function Select(name)
+{
+    let field = document.getElementById(name);
+    field.classList.add('main-info__fields_select');
+}
 
-//     getTitleArticle.textContent = post.Title;
-//     getTitle.innerHTML = post.Title;
-//     getSubTitleArticle.innerHTML = post.SubTitle;
-//     getSubTitle.innerHTML = post.SubTitle;
-//     getAuthorName.innerHTML = post.AuthorName;
-//     getAuthorPhoto.src = post.AuthorPhoto;
-//     getData.innerHTML = post.Data;
-//     getBigImage.src = post.BigImage;
-//     getSmallImage.src = post.SmallImage;
-// }
-
-// function PreviewBigIMage() 
-// {
-//     let getBigImage = document.getElementById('preview-big-image');
-//     getBigImage.src = post.BigImage;
-// }
-
-// function Select(name)
-// {
-//     let field = document.getElementById(name);
-//     field.classList.add('main-info__fields_select');
-// }
-
-// function NotSelect(name)
-// {
-//     let field = document.getElementById(name);
-//     let block = document.getElementById(name + '-block');
-//     field.classList.remove('main-info__fields_select');
+function NotSelect(name)
+{
+    let field = document.getElementById(name);
+    let block = document.getElementById(name + '-block');
+    field.classList.remove('main-info__fields_select');
 
 
-//     if((field.value === "") && (!field.classList.contains('main-info__fields_error')))
-//     {
-//         field.classList.add('main-info__fields_error');
+    if((field.value === "") && (!field.classList.contains('main-info__fields_error')))
+    {
+        field.classList.add('main-info__fields_error');
 
-//         let err_message = document.createElement('p');
-//         if (name === 'Author-name')
-//         {
-//             err_message.textContent = 'Author name is required.';
-//         }
-//         else
-//         {
-//             err_message.textContent = name + ' is required.';
-//         }
-//         err_message.classList.add('main-info__error-message');
-
-//         block.insertBefore(err_message, block.children[2]);
-
-//         switch (name) {
-//             case 'Title':
-//                 post.Title = null
-//                 break;
-//             case 'Subtitle':
-//                 post.SubTitle = null
-//                 break;
-//             case 'Author-name':
-//                 post.AuthorName = null
-//                 break;
-//         }   
-//     }
-//     else
-//     {
-//         if(field.classList.contains('main-info__fields_error'))
-//         {
-//             field.classList.remove('main-info__fields_error');
-//             block.children[2].remove();
-//         }
-
-//         switch (name) {
-//             case 'Title':
-//                 post.Title = field.value
-//                 break;
-//             case 'Subtitle':
-//                 post.SubTitle = field.value
-//                 break;
-//             case 'Author-name':
-//                 post.AuthorName = field.value
-//                 break;
-//         }    
-//     }
-//}
-title.addEventListener(
-    "input" , 
-    () => {
-        let title = document.getElementById('title').value;
-        let defaultTitle = 'New Post';
-        if (title !== '' && title.length < 25) {
-            document.getElementById('titleVisual').innerHTML = title;
-            document.getElementById('titleVisualTiny').innerHTML = title;
+        let err_message = document.createElement('p');
+        if (name === 'Author-name')
+        {
+            err_message.textContent = 'Author name is required.';
         }
-        else {
-            document.getElementById('titleVisual').innerHTML = defaultTitle;
-            document.getElementById('titleVisualTiny').innerHTML = defaultTitle;
+        else
+        {
+            err_message.textContent = name + ' is required.';
         }
-    }
-)
+        err_message.classList.add('main-info__error-message');
 
-subTitle.addEventListener(
-    "input",  
-    () => {
-        let subtitle = document.getElementById('description').value;
-        let defaultSubtitle = 'Please, enter any description';
-        if (subtitle !== '' && subtitle.length < 60){
-            document.getElementById('subtitleVisual').innerHTML = subtitle;
-            document.getElementById('subtitleVisualTiny').innerHTML = subtitle;
-        } 
-        else {
-            document.getElementById('subtitleVisual').innerHTML = defaultSubtitle;
-            document.getElementById('subtitleVisualTiny').innerHTML = defaultSubtitle;
+        block.insertBefore(err_message, block.children[2]);
+
+        switch (name) {
+            case 'Title':
+                post.Title = null
+                break;
+            case 'Subtitle':
+                post.SubTitle = null
+                break;
+            case 'Author-name':
+                post.AuthorName = null
+                break;
         }   
     }
-)
-
-author.addEventListener(
-    "input",   
-    () => {
-        let name = document.getElementById('author').value;
-        let defaultName = 'Enter author name';
-        if (name !== '' && name.length < 25){
-            document.getElementById('authorNameVisualTiny').innerHTML = name;
-        }    
-        else {
-            document.getElementById('authorNameVisualTiny').innerHTML = defaultName;
+    else
+    {
+        if(field.classList.contains('main-info__fields_error'))
+        {
+            field.classList.remove('main-info__fields_error');
+            block.children[2].remove();
         }
-    }
-)
 
-publishDate.addEventListener(
-    "input", 
-    () => {
-        let date = document.getElementById('publishDate').value;
-        let defaultDate = '18.04.2024';
-        if (date !== ''){
-            document.getElementById('dateVisuality').innerHTML = date;
+        switch (name) {
+            case 'Title':
+                post.Title = field.value
+                break;
+            case 'Subtitle':
+                post.SubTitle = field.value
+                break;
+            case 'Author-name':
+                post.AuthorName = field.value
+                break;
         }    
-        else {
-            document.getElementById('dateVisuality').innerHTML = defaultDate;
-        }
     }
-)
+}
 
 function ChangeIcon()
 {

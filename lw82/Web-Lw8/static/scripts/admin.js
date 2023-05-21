@@ -58,6 +58,7 @@ author.addEventListener(
         else {
             document.getElementById('authorNameVisualTiny').innerHTML = defaultName;
         }
+        
     }
 )
 

@@ -422,12 +422,13 @@
 {
     width: 940px;
     height: 160px;
+    resize: none;
+    padding: 8px 8px;
+    color: #2E2E2E;
+    font: 16px/24px "Oxygen";
     background: #FFFFFF;
     border: 1px solid #EAEAEA;
     border-radius: 5px;
-    padding: 12px;
-    font: 400 normal 17px/24px 'Oxygen';
-    margin-bottom: 56px;
 }
 
 .main-info__fields_select

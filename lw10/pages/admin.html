@@ -31,7 +31,7 @@
                                 <h1 class="main-top__title">{{ .Title }}</h1>
                                 <p class="main-top__subtitle">{{ .Subtitle }}</p>                       
                             </div>
-                            <button type="submit" class="main-top__button" onclick="Click()">{{ .Button }}</button>
+                            <button id="publishButton" type="submit" class="main-top__button" onclick="Click()">{{ .Button }}</button>
                         </div>
                         <div id="massage"></div>
                     </article>
@@ -45,30 +45,30 @@
                                     <form class="main-info__fields-for-entering">
                                         <div id="Title-block" class="main-info__field-title">
                                             <p class="main-info__fields-title">{{ .Title }}</p>
-                                            <input id="Title" class="main-info__fields" type="text" placeholder="New post" onfocus="Select('Title')" onblur="NotSelect('Title')">
+                                            <input id="Title" class="main-info__fields" type="text" placeholder="Please, enter any title">
                                         </div>
                                         <div id="Subtitle-block" class="main-info__field-description">
                                             <p class="main-info__fields-title">{{ .Description }}</p>
-                                            <input id="Subtitle" class="main-info__fields" type="text" placeholder="Please, enter any description" onfocus="Select('Subtitle')" onblur="NotSelect('Subtitle')">
+                                            <input id="Subtitle" class="main-info__fields" type="text" placeholder="Please, enter any description">
                                         </div>
                                         <div id="Author-name-block" class="main-info__field-author-name">
                                             <p class="main-info__fields-title">{{ .AuthorName }}</p>
-                                            <input id="Author-name" class="main-info__field-for-author-name" type="text" onfocus="Select('Author-name')" onblur="NotSelect('Author-name')">
+                                            <input id="Author-name" class="main-info__field-for-author-name" type="text">
                                         </div>
                                         <div>
                                             <p class="main-info__fields-title">{{ .AuthorPhoto }}</p>
                                             <div id="author-photo-block" class="main-info__field-author-photo">
-                                                <input id="author-photo" type="file" accept=".png, .jpeg, .jpg" style="visibility:hidden; position: absolute;" onchange ="ChangeIcon()">                         
+                                                <input id="author-photo" type="file" accept=".png, .jpeg, .jpg" style="visibility:hidden; position: absolute;">                         
                                                 <label id="author-label" class="main-info__label" for="author-photo">
                                                     <img src="{{ .AuthorPhotoURL }}" alt="Avatar">
                                                     <p class="main-info__upload">{{ .Upload }}</p>
                                                 </label>
-                                                <label id="remove-author" class="main-info__label" onclick="RemoveIcon()"></label>
+                                                <label id="remove-author" class="main-info__label"></label>
                                             </div> 
                                         </div>
                                         <div class="main-info__field-data">
                                             <p class="main-info__fields-title">{{ .Date }}</p>
-                                            <input id="data" value="2024-18-04" class="main-info__fields" type="date" onchange="datachange()">
+                                            <input id="publishDate" placeholder="" value="2024-04-18" class="main-info__fields" type="date">
                                         </div>
                                         <div>
                                             <p class="main-info__fields-title">{{ .TitleImage }}</p>
@@ -77,10 +77,10 @@
                                                     <label id="big-image-label" for="big-hero-image" class="main-info__label">
                                                         <img src="{{ .BigImageURL }}" alt="big image">
                                                     </label>
-                                                    <label id="big-remove-image" class="main-info__label" onclick="DeleteImage('big')"></label>
+                                                    <label id="big-remove-image" class="main-info__label"></label>
                                                 </div>
                                                 <p class="main-info__fields-title main-info__fields-note">{{ .BigNote }}</p>
-                                                <input id="big-hero-image" type="file" accept=".png, .jpeg, .jpg"  style="visibility: hidden; position: absolute;" onchange="ChangeImage('big')">
+                                                <input id="big-hero-image" type="file" accept=".png, .jpeg, .jpg"  style="visibility: hidden; position: absolute;">
                                             </div>
                                         </div>
                                         <div>
@@ -90,10 +90,10 @@
                                                     <label id="small-image-label" for="small-hero-image" class="main-info__label">
                                                         <img src="{{ .SmallImageURL }}" alt="small image">
                                                     </label>
-                                                    <label id="small-remove-image" class="main-info__label" onclick="DeleteImage('small')"></label>
+                                                    <label id="small-remove-image" class="main-info__label"></label>
                                                 </div>
                                                 <p class="main-info__fields-title main-info__fields-note">{{ .SmallNote }}</p>
-                                                <input id="small-hero-image" type="file" accept=".png, .jpeg, .jpg"  style="visibility: hidden; position: absolute;" onchange="ChangeImage('small')">
+                                                <input id="small-hero-image" type="file" accept=".png, .jpeg, .jpg"  style="visibility: hidden; position: absolute;">
                                              </div>
                                         </div>
                                     </form>
@@ -140,7 +140,7 @@
                             <h2 class="content__title">{{ .Title }}</h2>
                             <div class="content__text-area">
                                 <p class="content__comment">{{ .Comment }}</p>
-                                <textarea id="content" class="content__field-for-content" placeholder="Type anything you want ..."  onchange="ChangeContent()"></textarea>
+                                <textarea id="content" class="content__field-for-content" placeholder="Type anything you want ..."></textarea>
                             </div>
                         </div>
                     {{ end }}
