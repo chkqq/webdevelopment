@@ -1,23 +1,21 @@
-const showPasswordButton = document.querySelector(".form-field__show-password");
-const hidePasswordButton = document.querySelector(".form-field__hide-password");
+let user = {
+    "Email": null,
+    "Password": null
+}
 
-showPasswordButton.addEventListener(
-    "click",
-    () => {
-        showPasswordButton.classList.add("form-field__show-password-replace");
-        hidePasswordButton.classList.add("form-field__hide-password-replace");
-        document.querySelector(".form-field__password").type = "text";
-    }
-)
+function pass_visibility()
+{
+    pass = document.getElementById('password');
 
-hidePasswordButton.addEventListener(
-    "click",
-    () => {
-        showPasswordButton.classList.remove("form-field__show-password-replace");
-        hidePasswordButton.classList.remove("form-field__hide-password-replace");
-        document.querySelector(".form-field__password").type = "password";
+    if(pass.type === 'text')
+    {
+        pass.type = 'password';
     }
-)
+    else if(pass.type === 'password')
+    {
+        pass.type = 'text';
+    }
+}
 
 function Click()
 {

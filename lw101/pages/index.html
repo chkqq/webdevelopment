@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang = "ru">
+    <head>
+        <meta charset="utf-8">
+        <title>Главная страница</title>
+        <link href="../static/css/indexstyle.css" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Oxygen:wght@300&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Lora&display=swap" rel="stylesheet">
+    </head>
+    <body>
+        <div id="container">
+            {{ range .Header }}
+                <header class="header wrapper z-top">
+                    <img class="header__escape" src="{{ .Escape }}" alt="Escape.">
+                    {{ range .Nav }}
+                        <nav class="nav">
+                            <ul class="nav__ul">
+                                <li><a class="nav__link" href="{{ .FirstURL }}">{{ .First }}</a></li>
+                                <li><a class="nav__link" href="">{{ .Second }}</a></li>
+                                <li><a class="nav__link" href="">{{ .Third }}</a></li>
+                                <li><a class="nav__link" href="">{{ .Fourth }}</a></li>
+                            </ul>
+                        </nav>    
+                    {{ end }}
+                </header>
+            {{ end }}
+            {{ range .PostsHeader }}
+                <div class="posts-header">
+                    <img class="posts-header__image" src="{{ .BackroundHeader }}" alt="Lets do it together">
+                    <h1 class="posts-header__slogan z-top">{{ .Title }}</h1>
+                    <p class="posts-header__motto z-top">{{ .Subtitle }}</p>
+                    <button class="posts-header__button-for-latest-posts z-top">{{ .Button }}</button>
+                </div>
+            {{ end }}
+            {{ range .Menu }}
+                <div class="menu">
+                    <ul class="list-of-links wrapper">
+                        <li><a class="list-of-links__link" href="">{{ .First }}</a></li>
+                        <li><a class="list-of-links__link" href="">{{ .Second }}</a></li>
+                        <li><a class="list-of-links__link" href="">{{ .Third }}</a></li>
+                        <li><a class="list-of-links__link" href="">{{ .Fourth }}</a></li>
+                        <li><a class="list-of-links__link" href="">{{ .Fiveth }}</a></li>
+                        <li><a class="list-of-links__link" href="">{{ .Sixth }}</a></li>
+                    </ul>
+                </div>
+            {{ end }}    
+            <section class="posts">
+                <article class="featured-posts wrapper">   
+                    <h2 class="featured-posts__header">{{ .FeaturedPostsTitle }}</h2>
+                    <hr class="posts__line">
+                    <div class="featured-posts__block-with-posts">
+                        {{ range .FeaturedPosts}}
+                            <div class="featured-posts__post">
+                                <div class="featured-posts__theme featured-posts__other-elements {{ .Theme }}">
+                                    <p class="featured-posts__theme-label">{{ .Theme }}</p>
+                                </div>
+                                <a class="featured-posts__link featured-posts__other-elements" href = "{{ .PostURL }}">
+                                    <p class="featured-posts__title">{{ .Title }}</p>
+                                    <p class="featured-posts__description">{{ .Subtitle }}</p>
+                                </a>
+                                <div class="featured-posts__author-and-date featured-posts__other-elements">
+                                    <img class="featured-posts__icon" src = "{{ .Authorurl }}" alt="Mat Vogels">
+                                    <p class="featured-posts__name_surname_vogels">{{ .Author }}</p>
+                                    <p class="featured-posts__date">{{ .Publishdate }}</p>
+                                </div>
+                                <img class="featured-posts__image" src = "{{ .Imageurl }}" alt="The Road Ahead">
+                            </div>
+                        {{ end }}
+                    </div>
+                </article>
+                <article class="most-recent wrapper">
+                    <h2 class="most-recent__header">{{ .MostRecentTitle }}</h2>
+                    <hr class="posts__line">
+                    <div class="most-recent__block-with-posts">
+                        {{ range .MostRecent }}
+                            <div class="most-recent__post">
+                                <div class="most-recent__theme {{ .Theme }}">
+                                    <p class="most-recent__theme-label">{{ .Theme }}</p>
+                                </div>
+                                <img class="most-recent__image" src = "{{ .Imageurl }}" alt="Still Standing Tall">
+                                <a class="most-recent__title-and-description" href="{{ .PostURL }}">
+                                    <p class="most-recent__title">{{ .Title }}</p>
+                                    <p class="most-recent__description">{{ .Subtitle }}</p>
+                                </a>
+                                <hr class="most-recent__line-in-post">
+                                <div class="most-recent__author-and-date">
+                                    <img class="most-recent__icon" src = "{{ .Authorurl }}" alt="">
+                                    <p class="most-recent__name_surname_wong">{{ .Author }}</p>
+                                    <p class="most-recent__date">{{ .Publishdate }}</p>
+                                </div>
+                            </div>
+                        {{ end }}
+                    </div>
+                </article>
+            </section>
+            {{ range .Footer }}
+                <footer class="footer">
+                    <img class="footer__image" src="{{ .Background }}" alt="footer">
+                    <h2 class="footer__title z-top">{{ .Title}}</h2>
+                    <hr class="footer__line z-top">
+                    <form class="footer__field-for-email z-top">
+                        <input class="footer__entry-field" type="text" placeholder="Enter your email address">
+                        <button class="footer__button-sumbit">{{ .Button}}</button>
+                    </form>
+                    <div class="footer__bottom z-top">
+                        {{ range .Bottom }}
+                            <div class="footer__bottom-links wrapper">
+                                <img src="{{ .Escape }}" alt="Escape.">
+                                {{ range .Nav }}
+                                    <nav class="nav">
+                                        <ul class="nav__ul">
+                                            <li><a class="nav__link" href="{{ .FirstURL }}">{{ .First }}</a></li>
+                                            <li><a class="nav__link" href="">{{ .Second }}</a></li>
+                                            <li><a class="nav__link" href="">{{ .Third }}</a></li>
+                                            <li><a class="nav__link" href="">{{ .Fourth }}</a></li>
+                                        </ul>
+                                    </nav>    
+                                {{ end }}
+                            </div>
+                        {{ end }}
+                    </div>   
+                </footer>
+            {{ end }}
+        </div>
+    </body>
+</html>

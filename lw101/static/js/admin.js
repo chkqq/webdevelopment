@@ -16,75 +16,6 @@ const readerAuthor = new FileReader();
       readerBig = new FileReader();
       readerSmall = new FileReader();
 
-const title = document.getElementById('Title');
-const subTitle = document.getElementById('Subtitle');
-const author = document.getElementById('Author-name');
-const publishDate = document.getElementById('publishDate');
-
-// window.addEventListener("DOMContentLoaded", (event) => {
-//     console.log("page is fully loaded");
-//     console.log(document.getElementById("testButton"));   
-//     document.getElementById('publishButton').addEventListener('click', () => {
-//     console.log('CLICKED ON BUTTON');
-//     PrintToLog();
-//   });
-// });
-
-document.getElementById('author-photo').addEventListener('change', () => {
-    ChangeIcon();
-});
-
-document.getElementById('remove-author').addEventListener('click', () => {
-    RemoveIcon();
-});
-
-document.getElementById('big-remove-image').addEventListener('click', () => {
-    DeleteImage('big');
-});
-
-document.getElementById('big-hero-image').addEventListener('change', () => {
-    ChangeImage('big');
-});
-
-document.getElementById('small-remove-image').addEventListener('click', () => {
-    DeleteImage('small');
-});
-
-document.getElementById('small-hero-image').addEventListener('change', () => {
-    ChangeImage('small');
-});
-
-document.getElementById('content__field-for-content').addEventListener('change', () => {
-    ChangeContent();
-});
-
-document.getElementById('Title').addEventListener('focus', () => {
-    Select('Title');
-});
-
-document.getElementById('Title').addEventListener('blur', () => {
-    NotSelect('Title');
-});
-
-document.getElementById('Subtitle').addEventListener('focus', () => {
-    Select('Subtitle');
-});
-
-document.getElementById('Subtitle').addEventListener('blur', () => {
-    NotSelect('Subtitle');
-});
-
-document.getElementById('Author-name').addEventListener('focus', () => {
-    Select('Author-name');
-});
-
-document.getElementById('Author-name').addEventListener('blur', () => {
-    NotSelect('Author-name');
-});
-
-document.getElementById('publishDate').addEventListener('change', () => {
-    datachange();
-});
 
 function Click()
 {
@@ -121,6 +52,7 @@ function PrintToLog()
 
     if (NotNull)
     {
+        Preview();
         massage.classList.add('main-top__massage_complited');
         icon.src = "../static/svg_files/check_circle.svg";
         text.textContent = "Publish Complete!"
@@ -144,9 +76,36 @@ function PrintToLog()
         massage.insertBefore(text, massage.children[0]);
         massage.insertBefore(icon, massage.children[0]);
     }
- 
 }
 
+function Preview()
+{
+    let getTitleArticle = document.getElementById('preview-title-article');
+        getTitle = document.getElementById('preview-title');
+        getSubTitle = document.getElementById('preview-subtitle');
+        getSubTitleArticle = document.getElementById('preview-subtitle-article');
+        getAuthorName = document.getElementById('preview-author-name');
+        getAuthorPhoto = document.getElementById('preview-author-photo');
+        getData = document.getElementById('preview-data');
+        getBigImage = document.getElementById('preview-big-image');
+        getSmallImage = document.getElementById('preview-small-image');
+
+    getTitleArticle.textContent = post.Title;
+    getTitle.innerHTML = post.Title;
+    getSubTitleArticle.innerHTML = post.SubTitle;
+    getSubTitle.innerHTML = post.SubTitle;
+    getAuthorName.innerHTML = post.AuthorName;
+    getAuthorPhoto.src = post.AuthorPhoto;
+    getData.innerHTML = post.Data;
+    getBigImage.src = post.BigImage;
+    getSmallImage.src = post.SmallImage;
+}
+
+window.addEventListener("load", (event) => {
+    document.getElementById('publishDate').addEventListener('change', (event) => {
+    datachange();
+    });
+});
 function Select(name)
 {
     let field = document.getElementById(name);
@@ -248,7 +207,7 @@ function ChangeIcon()
         removelabel.insertBefore(remove, removelabel.children[0]);
         removelabel.insertBefore(trash, removelabel.children[0]);
     }
-    
+
     let icon = document.getElementById('author-icon');
     let iconPreview = document.getElementById('preview-author-photo');
     if(photo)
@@ -297,19 +256,15 @@ function RemoveIcon()
 
 function datachange()
 {
-    let data = document.getElementById('data');
-    let dataPreview = document.getElementById('preview-data');
+    let data = document.getElementById('publishDate');
     if(data.value === "")
     {
         post.Data = null;
     }
     else
     {
-        post.Data = data.value;
+        post.Data = data.value
     }
-    if(dataPreview){
-        dataPreview.value = post.Data
-    } 
 }
 
 function ChangeImage(size)
@@ -320,7 +275,6 @@ function ChangeImage(size)
         label = document.getElementById(size + '-image-label');
         block = document.getElementById(size + '-block-image');
         removelabel = document.getElementById(size + '-remove-image');
-    
 
     if((size === "big" ? post.BigImage !== "" : post.SmallImage !== "") && (removelabel.children[0] === undefined))
     {
@@ -369,8 +323,8 @@ function ChangeImage(size)
             "load",
             ()=>{
                 image.src = readerBig.result;
-                post.BigImage = readerBig.result;  
-                PreviewBigImage.src = readerBig.result;             
+                post.BigImage = readerBig.result;
+                PreviewBigImage.src = readerBig.result;
             },
             false
         );
@@ -390,7 +344,7 @@ function ChangeImage(size)
             "load",
             ()=>{
                 image.src = readerSmall.result;
-                post.SmallImage = readerSmall.result;              
+                post.SmallImage = readerSmall.result;
                 PreviewSmallImage.src = readerSmall.result;
             },
             false
@@ -403,7 +357,6 @@ function ChangeImage(size)
 function DeleteImage(size)
 {
     const PreviewImage = document.getElementById("preview-"+ size +"-image");
-    //const PreviewBigImage = document.getElementById("preview-big-image");
     let block = document.getElementById(size + '-block-image');
         label = document.getElementById(size + '-image-label');
         removelabel = document.getElementById(size + '-remove-image');
@@ -417,10 +370,11 @@ function DeleteImage(size)
     removelabel.children[0].remove();
 
     let image = document.createElement('img');
-    
-    image.src = "../static/images/hero_image_" + size + ".png";
+
+    image.src = "../static/images/hero_image_" + size + ".png"
     image.alt = size + " image";
     PreviewImage.src = "../static/images/image_not_selected.png";
+
 
     node = document.createElement('p')
     node.classList.add("main-info__fields-title");
