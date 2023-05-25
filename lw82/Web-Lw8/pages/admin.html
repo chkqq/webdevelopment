@@ -10,11 +10,9 @@
     <link href="https://fonts.googleapis.com/css2?family=Lora&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Lora&family=Oxygen&display=swap" rel="stylesheet">
     <link href="../static/css/admine.css" rel="stylesheet" type="text/css">
-    <link rel="icon" href="../static/img/favicon.ico">
   </head>
 
   <body class="page">
-    <!-- HEADER -->
     <header class="header">
       <div class="header__container">
         <a class="header__logo">
@@ -22,131 +20,110 @@
           <span>author</span>
         </a>
         <div class="header__menu">
-          <a class="header__avatar">N</a>
-          <a class="header__logout"></a>
+          <a class="header__avatar"></a>
+          <a class="header__logout" href="/login"></a>
         </div>
       </div>
     </header>
-    <!--/ HEADER -->
-
-    
-
-    <!-- FORM -->
     <form class="form">
-      <!-- MAIN -->
       <section class="form-head">
         <div class="form-head__content">
           <h1 class="form-head__title">New Post</h1>
           <p class="form-head__subtitle">Fill out the form bellow and publish your article</p>
         </div>
-        <input class="form-head__button" type="button" value="Publish" onclick="Publish()">
+        <button class="form-head__button" type="button" id="publishButton">Publish</button>
       </section>
-      <!--/ MAIN -->
-
-      <!-- WARNING -->
-      <section class="form-warning--hidden form-warning--success">
-        <div class="form-warning__icon"></div>
-        <p class="form-warning__text">Publish Complete!</p>
+      <section class="form-warning" id="formWarning">
+      <div class="form-warning__main" id="formWarningMess">
+        <img class="form-warning__icon" id="warningIcon" >
+        <p class="form-warning__text" id="warningText"></p>
+      </div>
       </section>
-      <!--/ WARNING -->
-
-      <!-- MAIN CARD -->
       <section class="form-card form-card__main">
         <h2 class="form-card__title">Main Information</h2>
         <div class="form-card__content">
           <div class="form-card__fields">
             <div class="form-card__field">
               <p class="form-card__label">Title</p>
-              <input type="text" name="Title" placeholder="Please, enter any title" value="New Post" class="form-card__input" id="title" required>
+              <input type="text" name="Title" placeholder="Please, enter any title..." value="New Post" class="form-card__input" id="title">
+              <div class="form-card__is-required" id="titleReq"><p>Title is required.</p></div>
             </div>
 
             <div class="form-card__field">
               <p class="form-card__label">Short description</p>
-              <input type="text" name="Description" placeholder="Please, enter any description" value="" class="form-card__input" id="description" required>
+              <input type="text" name="Description" placeholder="Please, enter any description..."  class="form-card__input" id="description">
+              <div class="form-card__is-required" id="subTitleReq"><p>Subtitle is required.</p></div>
             </div>
 
             <div class="form-card__field">
               <p class="form-card__label">Author name</p>
-              <input type="text" name="Author" placeholder="" value="" class="form-card__input" id="author" required>
+              <input type="text" name="Author" placeholder="Please, enter your name..." value="" class="form-card__input" id="author">
+              <div class="form-card__is-required" id="authorReq"><p>Author name is required.</p></div>
             </div>
 
             <div class="form-card__field">
               <p class="form-card__label">Author Photo </p>
               <div class="author-photo-form">
                 <label for="photoAuthor" class="photoAuthor">
-                  <img class="preview-author-photo" src="../static/img/page/author_background.png" />
+                  <img class="preview-author-photo" src="../static/svg/photo_icon.svg" />
                 </label>
+                
                 <label for="photoAuthor" class="author-photo-form__upload-button">
-                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="upload-button__icon">
-                    <path d="M23 19C23 19.5304 22.7893 20.0391 22.4142 20.4142C22.0391 20.7893 21.5304 21 21 21H3C2.46957 21 1.96086 20.7893 1.58579 20.4142C1.21071 20.0391 1 19.5304 1 19V8C1 7.46957 1.21071 6.96086 1.58579 6.58579C1.96086 6.21071 2.46957 6 3 6H7L9 3H15L17 6H21C21.5304 6 22.0391 6.21071 22.4142 6.58579C22.7893 6.96086 23 7.46957 23 8V19Z" stroke="black" stroke-linecap="round" stroke-linejoin="round"/>
-                    <path d="M12 17C14.2091 17 16 15.2091 16 13C16 10.7909 14.2091 9 12 9C9.79086 9 8 10.7909 8 13C8 15.2091 9.79086 17 12 17Z" stroke="black" stroke-linecap="round" stroke-linejoin="round"/>
-                  </svg>
+                  <img src="../static/svg/camera.svg" alt="camera" class="upload-button__icon">  
                   <span id="uploadAuthorPhotoButton">Upload</span>
                 </label>
-                <input type="file" id="photoAuthor" name="photoAuthor" accept=".jpg, .jpeg, .png" class="author-photo-form__input" required />
-                <button class="author-photo-form__remove-button">
-                  <svg width="20" height="22" viewBox="0 0 20 22" fill="none" xmlns="http://www.w3.org/2000/svg" class="remove-button__icon">
-                    <path fill-rule="evenodd" clip-rule="evenodd" d="M6.93934 1.93934C7.22064 1.65804 7.60218 1.5 8 1.5H12C12.3978 1.5 12.7794 1.65804 13.0607 1.93934C13.342 2.22064 13.5 2.60218 13.5 3V4.5H6.5V3C6.5 2.60218 6.65804 2.22064 6.93934 1.93934ZM5.5 4.5V3C5.5 2.33696 5.76339 1.70107 6.23223 1.23223C6.70107 0.763392 7.33696 0.5 8 0.5H12C12.663 0.5 13.2989 0.763392 13.7678 1.23223C14.2366 1.70107 14.5 2.33696 14.5 3V4.5H17H19C19.2761 4.5 19.5 4.72386 19.5 5C19.5 5.27614 19.2761 5.5 19 5.5H17.5V19C17.5 19.663 17.2366 20.2989 16.7678 20.7678C16.2989 21.2366 15.663 21.5 15 21.5H5C4.33696 21.5 3.70107 21.2366 3.23223 20.7678C2.76339 20.2989 2.5 19.663 2.5 19V5.5H1C0.723858 5.5 0.5 5.27614 0.5 5C0.5 4.72386 0.723858 4.5 1 4.5H3H5.5ZM3.5 5.5H6H14H16.5V19C16.5 19.3978 16.342 19.7794 16.0607 20.0607C15.7794 20.342 15.3978 20.5 15 20.5H5C4.60218 20.5 4.22064 20.342 3.93934 20.0607C3.65804 19.7794 3.5 19.3978 3.5 19V5.5ZM8 9.5C8.27614 9.5 8.5 9.72386 8.5 10V16C8.5 16.2761 8.27614 16.5 8 16.5C7.72386 16.5 7.5 16.2761 7.5 16V10C7.5 9.72386 7.72386 9.5 8 9.5ZM12.5 10C12.5 9.72386 12.2761 9.5 12 9.5C11.7239 9.5 11.5 9.72386 11.5 10V16C11.5 16.2761 11.7239 16.5 12 16.5C12.2761 16.5 12.5 16.2761 12.5 16V10Z" fill="#E86961"/>
-                  </svg>                
+                <input type="file" id="photoAuthor" name="photoAuthor" accept=".jpg, .jpeg, .png" class="author-photo-form__input"/>
+                <button class="author-photo-form__remove-button" type="button">
+                  <img src="../static/svg/trash.svg" alt="trash" class="remove-button__icon">             
                   <span>Remove</span>
                 </button>
               </div>
+              <p  class="form-card__is-required" id="authorPhotoReq">Author photo is required.</p>
             </div>
-
             <div class="form-card__field">
               <p class="form-card__label">Publish Date</p>
               <input type="date" name="PublishDate" placeholder="" value="2024-04-18" class="form-card__input" id="publishDate">
+              <div class="form-card__is-required" id="publishDateReq"><p>Date is required.</p></div>
             </div>
-
             <div class="form-card__field">
               <p class="form-card__label">Hero Image </p>
               <label class="upload-place" for="photoPost">
                 <img src="../static/img/page/cover_background.png" class="upload-place__img" />
               </label>
-              <input type="file" id="photoPost" name="photoPost" accept=".jpg, .jpeg, .png" class="input-hero-image__input" required />
+              <input type="file" id="photoPost" name="photoPost" accept=".jpg, .jpeg, .png" class="input-hero-image__input"/>
+              <p  class="form-card__is-required" id="postIMGReq">Post photo is required.</p>
               <span class="input-hero-image__sign">Size up to 10mb. Format: png, jpeg, gif.</span>
               <div class="img-buttons">
                 <label for="photoPost" class="upload-hero">
-                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M23 19C23 19.5304 22.7893 20.0391 22.4142 20.4142C22.0391 20.7893 21.5304 21 21 21H3C2.46957 21 1.96086 20.7893 1.58579 20.4142C1.21071 20.0391 1 19.5304 1 19V8C1 7.46957 1.21071 6.96086 1.58579 6.58579C1.96086 6.21071 2.46957 6 3 6H7L9 3H15L17 6H21C21.5304 6 22.0391 6.21071 22.4142 6.58579C22.7893 6.96086 23 7.46957 23 8V19Z" stroke="black" stroke-linecap="round" stroke-linejoin="round"/>
-                    <path d="M12 17C14.2091 17 16 15.2091 16 13C16 10.7909 14.2091 9 12 9C9.79086 9 8 10.7909 8 13C8 15.2091 9.79086 17 12 17Z" stroke="black" stroke-linecap="round" stroke-linejoin="round"/>
-                  </svg>   
+                  <img src="../static/svg/camera.svg" alt="camera">   
                   <span class="upload-hero__button">Upload New</span>
                 </label>
                 <button class="remove-hero">
-                  <svg width="20" height="22" viewBox="0 0 20 22" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path fill-rule="evenodd" clip-rule="evenodd" d="M6.93934 1.93934C7.22064 1.65804 7.60218 1.5 8 1.5H12C12.3978 1.5 12.7794 1.65804 13.0607 1.93934C13.342 2.22064 13.5 2.60218 13.5 3V4.5H6.5V3C6.5 2.60218 6.65804 2.22064 6.93934 1.93934ZM5.5 4.5V3C5.5 2.33696 5.76339 1.70107 6.23223 1.23223C6.70107 0.763392 7.33696 0.5 8 0.5H12C12.663 0.5 13.2989 0.763392 13.7678 1.23223C14.2366 1.70107 14.5 2.33696 14.5 3V4.5H17H19C19.2761 4.5 19.5 4.72386 19.5 5C19.5 5.27614 19.2761 5.5 19 5.5H17.5V19C17.5 19.663 17.2366 20.2989 16.7678 20.7678C16.2989 21.2366 15.663 21.5 15 21.5H5C4.33696 21.5 3.70107 21.2366 3.23223 20.7678C2.76339 20.2989 2.5 19.663 2.5 19V5.5H1C0.723858 5.5 0.5 5.27614 0.5 5C0.5 4.72386 0.723858 4.5 1 4.5H3H5.5ZM3.5 5.5H6H14H16.5V19C16.5 19.3978 16.342 19.7794 16.0607 20.0607C15.7794 20.342 15.3978 20.5 15 20.5H5C4.60218 20.5 4.22064 20.342 3.93934 20.0607C3.65804 19.7794 3.5 19.3978 3.5 19V5.5ZM8 9.5C8.27614 9.5 8.5 9.72386 8.5 10V16C8.5 16.2761 8.27614 16.5 8 16.5C7.72386 16.5 7.5 16.2761 7.5 16V10C7.5 9.72386 7.72386 9.5 8 9.5ZM12.5 10C12.5 9.72386 12.2761 9.5 12 9.5C11.7239 9.5 11.5 9.72386 11.5 10V16C11.5 16.2761 11.7239 16.5 12 16.5C12.2761 16.5 12.5 16.2761 12.5 16V10Z" fill="#E86961"/>
-                  </svg>
+                  <img src="../static/svg/trash.svg" alt="trash">
                   <span class="remove-hero__button">Remove</span>
                 </button>
               </div>
             </div>
-
             <div class="form-card__field">
               <p class="form-card__label">Hero Image </p>
               <label for="photoPostTiny" class="upload-place-tiny">
                 <img src="../static/img/page/card_background.png" class="upload-place-tiny__img" />
               </label>
               <input type="file" id="photoPostTiny" name="photoPostTiny" accept=".jpg, .jpeg, .png" class="input-hero-image-tiny__input">
+              <p  class="form-card__is-required" id="tinyPostIMGReq">Post-card photo is required.</p>
               <span class="input-hero-image-tiny__sign">Size up to 5mb. Format: png, jpeg, gif.</span>
               <div class="tiny-img-buttons">
                 <label for="photoPostTiny" class="upload-hero">
-                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M23 19C23 19.5304 22.7893 20.0391 22.4142 20.4142C22.0391 20.7893 21.5304 21 21 21H3C2.46957 21 1.96086 20.7893 1.58579 20.4142C1.21071 20.0391 1 19.5304 1 19V8C1 7.46957 1.21071 6.96086 1.58579 6.58579C1.96086 6.21071 2.46957 6 3 6H7L9 3H15L17 6H21C21.5304 6 22.0391 6.21071 22.4142 6.58579C22.7893 6.96086 23 7.46957 23 8V19Z" stroke="black" stroke-linecap="round" stroke-linejoin="round"/>
-                    <path d="M12 17C14.2091 17 16 15.2091 16 13C16 10.7909 14.2091 9 12 9C9.79086 9 8 10.7909 8 13C8 15.2091 9.79086 17 12 17Z" stroke="black" stroke-linecap="round" stroke-linejoin="round"/>
-                  </svg>   
+                  <img src="../static/svg/camera.svg" alt="camera">  
                   <span class="upload-hero__button">Upload New</span>
                 </label>
                 <button class="remove-tiny-hero">
-                  <svg width="20" height="22" viewBox="0 0 20 22" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path fill-rule="evenodd" clip-rule="evenodd" d="M6.93934 1.93934C7.22064 1.65804 7.60218 1.5 8 1.5H12C12.3978 1.5 12.7794 1.65804 13.0607 1.93934C13.342 2.22064 13.5 2.60218 13.5 3V4.5H6.5V3C6.5 2.60218 6.65804 2.22064 6.93934 1.93934ZM5.5 4.5V3C5.5 2.33696 5.76339 1.70107 6.23223 1.23223C6.70107 0.763392 7.33696 0.5 8 0.5H12C12.663 0.5 13.2989 0.763392 13.7678 1.23223C14.2366 1.70107 14.5 2.33696 14.5 3V4.5H17H19C19.2761 4.5 19.5 4.72386 19.5 5C19.5 5.27614 19.2761 5.5 19 5.5H17.5V19C17.5 19.663 17.2366 20.2989 16.7678 20.7678C16.2989 21.2366 15.663 21.5 15 21.5H5C4.33696 21.5 3.70107 21.2366 3.23223 20.7678C2.76339 20.2989 2.5 19.663 2.5 19V5.5H1C0.723858 5.5 0.5 5.27614 0.5 5C0.5 4.72386 0.723858 4.5 1 4.5H3H5.5ZM3.5 5.5H6H14H16.5V19C16.5 19.3978 16.342 19.7794 16.0607 20.0607C15.7794 20.342 15.3978 20.5 15 20.5H5C4.60218 20.5 4.22064 20.342 3.93934 20.0607C3.65804 19.7794 3.5 19.3978 3.5 19V5.5ZM8 9.5C8.27614 9.5 8.5 9.72386 8.5 10V16C8.5 16.2761 8.27614 16.5 8 16.5C7.72386 16.5 7.5 16.2761 7.5 16V10C7.5 9.72386 7.72386 9.5 8 9.5ZM12.5 10C12.5 9.72386 12.2761 9.5 12 9.5C11.7239 9.5 11.5 9.72386 11.5 10V16C11.5 16.2761 11.7239 16.5 12 16.5C12.2761 16.5 12.5 16.2761 12.5 16V10Z" fill="#E86961"/>
-                  </svg>
+                  <img src="../static/svg/trash.svg" alt="trash">
                   <span class="remove-hero__button">Remove</span>
                 </button>
               </div>
             </div>
           </div>
-          <!--  -->
           <div class="form-card__preview">
             <div class="article-preview">
               <span class="article-preview__title">Article preview</span>
@@ -163,7 +140,6 @@
               <div class="gorizontal-gradient-article-visual"></div>
               <div class="vertical-gradient-article-visual"></div>
             </div>
-
             <div class="post-card-preview">
               <span class="post-card-preview__title">Post card preview</span>
               <div class="post-card-preview-visual">
@@ -184,12 +160,8 @@
               <div class="vertical-gradient-post-card-visual"></div>
             </div>
           </div>
-          <!--  -->
         </div>
       </section>
-      <!--/ MAIN CARD -->
-      
-      <!-- CONTENT CARD -->
       <section class="form-card form-card__extra">
         <h2 class="form-card__title">Content</h2>
         <div class="form-card__content">
@@ -197,16 +169,12 @@
             <div class="form-card__field">
               <p class="form-card__label">Post content (plain text)</p>
               <textarea name="Content" placeholder="Type anything you want ..." value="" class="form-card__text" id="content"></textarea>
+              <div class="form-card__is-required" id="contentReq"><p>Post content is required.</p></div>
             </div>
           </div>
         </div>
       </section>
-      <!--/ CONTENT CARD -->
     </form>
-    <!--/ FORM -->
-
-    <!-- MAIN -->
-    <!--/ MAIN -->
     <script src="../static/scripts/admin.js"></script>
   </body>
 </html>

@@ -63,11 +63,8 @@
     width: 32px;
     height: 32px;
 
-    background: #DD783F;
+    background: url("../img/avatar.png");
     border-radius: 20px;
-
-    font: 16px/24px "Oxygen";
-    color: #FFFFFF;
 }
 
 .header__logout
@@ -79,7 +76,7 @@
     width: 24px;
     height: 24px;
 
-    background: url("../icons/log-out.svg");
+    background: url("../svg/log_out.svg");
     margin-right: 9px;
 }
 
@@ -134,7 +131,24 @@
     text-align: center;
 }
 
-.form-warning
+.form-warning 
+{
+    /* display: none; */
+    visibility: hidden;
+    height: 0px;
+    transition: opacity 0.3s ease;
+    opacity: 0;
+}
+
+.form-warning_visible 
+{
+    /* display: block; */
+    height: 50px;
+    visibility: visible;
+    opacity: 1;
+}
+
+.form-warning__main
 {
     display: flex;
     flex-direction: row;
@@ -145,11 +159,17 @@
     gap: 10px;
     border-radius: 5px;
     box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.12);
+    /* background-color: #E6FCEF; */
 }
 
-.form-warning--hidden
-{
-    display: none;
+.form-warning__main-valid {
+    background-color: #E6FCEF;
+    border-left: 2px solid #67C38C;
+}
+
+.form-warning__main-invalid {
+    background-color: #FFEBEA;
+    border-left: 2px solid #E86961;
 }
 
 .form-warning__icon
@@ -158,11 +178,10 @@
     height: 24px;
 }
 
-.form-warning--success
-.form-warning__icon
+/* .form-warning__icon
 {
     background: url("../icons/check_circle.svg");
-}
+} */
 
 .form-warning--critical
 .form-warning__icon
@@ -267,14 +286,28 @@
     background: #F7F7F7;
     border-bottom: 1.5px solid #2E2E2E;
     border-radius: 5px 5px 0px 0px;
+    transition: border-bottom-color 0.3s ease;
 }
 
-.form-card__input:invalid
+.form-card__input-invalid
 {
-    outline: none;
-    border: 0;
-    background: #FFFFFF;
-    border-bottom: 1px solid #EAEAEA;
+    border-bottom: 1.5px solid #E86961;
+}
+
+.form-card__is-required {
+    font: normal 400 12px/16px 'Oxygen';
+    visibility: hidden;
+    color: #E86961;
+    transition: opacity 0.3s ease;
+    opacity: 0;
+    height: 0;
+}
+
+.form-card__is-required-visible {
+    /* display: block; */
+    height: 1px;
+    opacity: 1;
+    visibility: visible;
 }
 
 .form-card__input:focus:valid
@@ -296,6 +329,12 @@
     font: 16px/24px "Oxygen";
     background: #FFFFFF;
     border: 1px solid #EAEAEA;
+    border-radius: 5px;
+    transition: border-color 0.3s ease;
+}
+
+.form-card__text-invalid {
+    border: 1.5px solid #E86961;
     border-radius: 5px;
 }
 
@@ -493,7 +532,8 @@
 
 .remove-hero__button
 {
-    margin-left: 17px;
+    margin-left: 9px;
+    color: #E86961;
 }
 
 .input-hero-image-tiny

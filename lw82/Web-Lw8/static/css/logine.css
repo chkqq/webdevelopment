@@ -1,5 +1,7 @@
 @import url("./styles.css");
 
+
+
 .page
 {
     background: linear-gradient(0deg, rgba(66, 70, 73, 0.4), rgba(66, 70, 73, 0.4)), url(../img/login_background.png);
@@ -138,35 +140,21 @@
     line-height: 24px;
     color: #2E2E2E;
     background: #FFFFFF;
-    outline: none;
-    border: 0;
+    border-radius: 0;
+    border-width: 0;
     border-bottom: 1px solid #EAEAEA;
+    transition: border-bottom-color 0.3s ease;
 }
 
-.form-field__email:invalid
+/* .form-field__email::before, .form-field__email::after 
 {
-    outline: none;
-    border: 0;
-    background: #FFFFFF;
-    border-bottom: 1px solid #EAEAEA;
-}
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+} */
 
-.form-field__email:focus:valid
+.form-field__email-invalid
 {
-    outline: none;
-    border: 0;
-    background: #F7F7F7;
-    border-bottom: 1px solid #2E2E2E;
-    border-radius: 5px 5px 0 0;
-}
-
-.form-field__email:valid
-{
-    outline: none;
-    border: 0;
-    background: #F7F7F7;
-    border-bottom: 1px solid #2E2E2E;
-    border-radius: 5px 5px 0 0;
+    border-bottom: 1px solid #E86961;
 }
 
 .form-field__password
@@ -181,32 +169,12 @@
     border-radius: 0;
     border-width: 0;
     border-bottom: 1px solid #EAEAEA;
+    transition: border-bottom-color 0.3s ease;
 }
 
-.form-field__password:invalid
+.form-field__password-invalid
 {
-    outline: none;
-    border: 0;
-    background: #FFFFFF;
-    border-bottom: 1px solid #EAEAEA;
-}
-
-.form-field__password:focus:valid
-{
-    outline: none;
-    border: 0;
-    background: #F7F7F7;
-    border-bottom: 1px solid #2E2E2E;
-    border-radius: 5px 5px 0 0;
-}
-
-.form-field__password:valid
-{
-    outline: none;
-    border: 0;
-    background: #F7F7F7;
-    border-bottom: 1px solid #2E2E2E;
-    border-radius: 5px 5px 0 0;
+    border-bottom: 1px solid #E86961;
 }
 
 .form-field__show-password
@@ -258,3 +226,47 @@
     border-radius: 3px;
     background: var(--background-button);
 }
+
+.form__warning 
+{
+    margin: 5px;
+    box-sizing: border-box;
+    /* display: none; */
+    visibility: hidden;
+    padding: 10px 12px;
+    gap: 10px;  
+    width: 400px;
+    height: 0px;
+    opacity: 0;
+    background: #FFEBEA;
+    border-left: 2px solid #E86961;
+    border-radius: 5px;
+    transition: opacity 0.3s ease;
+}
+
+.form__warning-visible 
+{
+    height: 44px;
+    opacity: 1;
+    /* display: block; */
+    visibility: visible;
+}
+
+.form__warning-text {
+    margin: 0;
+}
+
+.form-field__email-mess, .form-field__pass-mess {
+    font: normal 400 12px/16px 'Oxygen';
+    visibility: hidden;
+    color: #E86961;
+    transition: opacity 0.3s ease;
+    opacity: 0;
+}
+
+.form-field__email-mess-visible, .form-field__pass-mess-visible {
+    /* display: block; */
+    opacity: 1;
+    visibility: visible;
+}
+
